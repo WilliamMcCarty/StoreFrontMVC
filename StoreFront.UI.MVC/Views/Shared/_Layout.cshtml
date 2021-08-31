@@ -1,49 +1,217 @@
-﻿<!DOCTYPE html>
-<html>
+﻿@{
+    ViewBag.Title = "Home | Florist Gifts & Collectibles";
+}
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Your name">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/favicon-16x16.png">
+    @*<link rel="manifest" href="/site.webmanifest">*@
 
+    <link rel="stylesheet" href="~/Content/css/bootstrap.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="~/Content/css/bootstrap-responsive.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="~/Content/css/camera.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="~/Content/css/style.css" type="text/css" media="screen">
+
+    <script type="text/javascript" src="~/Content/js/jquery.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="~/Content/js/superfish.js"></script>
+
+    <script type="text/javascript" src="~/Content/js/jquery.ui.totop.js"></script>
+
+    <script type="text/javascript" src="~/Content/js/camera.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.mobile.customized.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // camera
+            $('#camera_wrap').camera({
+                //thumbnails: true
+                autoAdvance: true,
+                mobileAutoAdvance: true,
+                //fx					: 'simpleFade',
+                height: '50%',
+                hover: false,
+                loader: 'none',
+                navigation: false,
+                navigationHover: false,
+                mobileNavHover: false,
+                playPause: false,
+                pauseOnClick: false,
+                pagination: true,
+                time: 7000,
+                transPeriod: 1000,
+                minHeight: '350px'
+            });
+
+        }); //
+        $(window).load(function () {
+            //
+
+        }); //
+    </script>
+    <!--[if lt IE 8]>
+            <div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>
+        <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+    <![endif]-->
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
 
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin")) {
-                        <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
-                        <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
-                    }
-                </ul>
-                @Html.Partial("_LoginPartial")
+<body class="main">
+    <div id="main">
+
+        <div class="top1">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="top1_inner">
+
+                            <header><div class="logo_wrapper"><a href="index.html" class="logo"><img src="~/Content/images/logo.png" alt=""></a></div></header>
+
+                            <div class="search-form-wrapper clearfix">
+                                <form id="search-form" action="~/Content/search.php" method="GET" accept-charset="utf-8" class="navbar-form">
+                                    <input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''">
+                                    <a href="#" onClick="document.getElementById('search-form').submit()"></a>
+                                </form>
+                            </div>
+
+                            <div class="menu_wrapper">
+                                <div class="arr_left"></div>
+                                <div class="arr_right"></div>
+                                <div class="navbar navbar_">
+                                    <div class="navbar-inner navbar-inner_">
+                                        <a class="btn btn-navbar btn-navbar_" data-toggle="collapse" data-target=".nav-collapse_">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </a>
+                                        <div class="nav-collapse nav-collapse_ collapse">
+                                            <ul class="nav sf-menu clearfix">
+                                                <li class="active"><a href="index.html">home page</a></li>
+                                                <li class="sub-menu sub-menu-1">
+                                                    <a href="index-1.html">about us</a>
+                                                    <ul>
+                                                        <li><a href="index-1.html">who we are</a></li>
+                                                        <li><a href="index-1.html">our mission</a></li>
+                                                        <li><a href="index-1.html">history</a></li>
+                                                        <li><a href="404.html">404 page not found</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="index-2.html">services</a></li>
+                                                <li><a href="index-3.html">gallery</a></li>
+                                                <li><a href="index-4.html">prices</a></li>
+                                                <li><a href="index-5.html">contacts</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="slider_wrapper">
+                                <div id="slider" class="clearfix">
+                                    <div id="camera_wrap">
+
+                                        <div data-src="/Content/images/slide03.jpg">
+                                            <div class="camera_caption fadeIn">
+                                                <div class="txt1">Bouquets</div>
+                                                <div class="txt2">for all occasions</div>
+                                                <div class="txt3">Find the freshest flowers and hand tied</div>
+                                            </div>
+                                        </div>
+                                        <div data-src="/Content/images/slide04.jpg">
+                                            <div class="camera_caption fadeIn">
+                                                <div class="txt1">Bouquets</div>
+                                                <div class="txt2">for all occasions</div>
+                                                <div class="txt3">Find the freshest flowers and hand tied</div>
+                                            </div>
+                                        </div>
+                                        <div data-src="/Content/images/slide05.jpg">
+                                            <div class="camera_caption fadeIn">
+                                                <div class="txt1">Bouquets</div>
+                                                <div class="txt2">for all occasions</div>
+                                                <div class="txt3">Find the freshest flowers and hand tied</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @RenderBody()
+
+        <div class="bot1">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="bot1_inner">
+                            <div class="row">
+                                <div class="span3">
+                                    <div class="bot1_title">About Us</div>
+                                    <ul class="ul0">
+                                        <li><a href="#">Quisque nullatibulum libero</a></li>
+                                        <li><a href="#">Scelerisque eget, malesuada at</a></li>
+                                        <li><a href="#">Vivamus eget niiam cursus leo</a></li>
+                                        <li><a href="#">Nulla facilisinean nec eros</a></li>
+                                        <li><a href="#">Vestibulum ante ipsum</a></li>
+                                    </ul>
+                                </div>
+                                <div class="span3">
+                                    <div class="bot1_title">Design Ideas</div>
+                                    <ul class="ul0">
+                                        <li><a href="#">Nam elit magna, hendrerit</a></li>
+                                        <li><a href="#">Quisque nullatibulum libero</a></li>
+                                        <li><a href="#">Scelerisque eget, malesuada at</a></li>
+                                        <li><a href="#">Vivamus eget niiam cursus leo</a></li>
+                                        <li><a href="#">Nulla facilisinean nec eros</a></li>
+                                    </ul>
+                                </div>
+                                <div class="span3">
+                                    <div class="bot1_title">Links</div>
+                                    <ul class="ul0">
+                                        <li><a href="#">Free Bootstrap Templates</a></li>
+                                        <li><a href="#">Vestibulum ante ipsum</a></li>
+                                        <li><a href="#">Primis in faucib</a></li>
+                                        <li><a href="#">Orci luctus et ultrices posuere</a></li>
+                                        <li><a href="#">Suspendisse sollicitudin</a></li>
+                                    </ul>
+                                </div>
+                                <div class="span3">
+                                    <div class="bot1_title">Copyright</div>
+                                    <footer><div class="copyright">Copyright © @DateTime.Now.Year Florals Gifts & Collectibles</div></footer>
+                                    <div class="social_wrapper">
+                                        <ul class="social clearfix">
+                                            <li><a href="#"><img src="~/Content/images/social_ic1.png"></a></li>
+                                            <li><a href="#"><img src="~/Content/images/social_ic2.png"></a></li>
+                                            <li><a href="#"><img src="~/Content/images/social_ic3.png"></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="~/Content/js/bootstrap.js"></script>
 </body>
 </html>
