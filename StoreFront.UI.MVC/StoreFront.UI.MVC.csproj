@@ -409,9 +409,9 @@
     <Content Include="_Archive\search\results.php" />
     <Content Include="_Archive\search\search.css" />
     <Content Include="_Archive\search\search.js" />
-    <None Include="Configs\Connections.config" />
     <Content Include="Content\captcha\CARTOON8.TTF" />
     <Content Include="Configs\SecretKey.config" />
+    <Content Include="Configs\Connections.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
