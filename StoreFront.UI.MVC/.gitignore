@@ -387,5 +387,6 @@ FodyWeavers.xsd
 .idea/
 *.sln.iml
 
+
 # Ignore Configs Folder
 /Configs
