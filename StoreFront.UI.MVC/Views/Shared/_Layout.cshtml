@@ -75,7 +75,7 @@
                     <div class="span12">
                         <div class="top1_inner">
 
-                            <header><div class="logo_wrapper"><a href="index.html" class="logo"><img src="~/Content/images/logo.png" alt=""></a></div></header>
+                            <header><div class="logo_wrapper"><a href="@Url.Action("Index","Home")" class="logo"><img src="~/Content/images/logo.png" alt=""></a></div></header>
 
                             <div class="search-form-wrapper clearfix">
                                 <form id="search-form" action="~/Content/search.php" method="GET" accept-charset="utf-8" class="navbar-form">
@@ -104,33 +104,70 @@
                                                 {
                                                     <li>@Html.ActionLink("HOME", "Index", "Home")</li>
                                                 }
+
                                                 <li class="sub-menu sub-menu-1">
-                                                    <a href="index-1.html">about us</a>
-                                                    <ul>
-                                                        <li><a href="index-1.html">who we are</a></li>
-                                                        <li><a href="index-1.html">our mission</a></li>
-                                                        <li><a href="index-1.html">history</a></li>
-                                                        <li><a href="404.html">404 page not found</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="index-2.html">services</a></li>
-                                                <li class="sub-menu sub-menu-1">
-                                                    <a>PRODUCTS</a>
+                                                    <a href="">PRODUCTS</a>
                                                     <ul>
                                                         <li class="sub-menu sub-menu-2">
-                                                            <a>APPAREL</a>
+                                                            <a href="">APPAREL</a>
                                                             <ul>
-                                                                <li><a href="index-1.html">JACKETS</a></li>
-                                                                <li><a href="index-1.html">SHIRTS</a></li>
-                                                                <li><a href="index-1.html">VESTS</a></li>
-                                                                <li><a href="404.html">WOMEN</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">BABY ITEMS</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">JACKETS</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">SHIRTS</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">VESTS</a></li>
                                                             </ul>
                                                         </li>
-                                                        <li><a href="index-1.html">COLLECTIBLES</a></li>
-                                                        <li><a href="index-1.html">GIFTS</a></li>
-                                                        <li><a href="404.html">KITCHEN</a></li>
+                                                        <li class="sub-menu sub-menu-2">
+                                                            <a href="">COLLECTIBLES</a>
+                                                            <ul>
+                                                                <li><a href="~/_Archive/index-3.html">BIRD HOUSES</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">MYSTICAL</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">STATUES</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">VASES</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="sub-menu sub-menu-2">
+                                                            <a href="">GARDEN</a>
+                                                            <ul>
+                                                                <li><a href="~/_Archive/index-3.html">FOUNTAINS</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">OUT DOOR LIVING</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">PLANTERS & STANDS</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">STEPPING STONES</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="sub-menu sub-menu-2">
+                                                            <a href="">GIFTS</a>
+                                                            <ul>
+                                                                <li><a href="~/_Archive/index-3.html">CANDLES</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">FAITH INSPIRATION</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">FRAGRANCES</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">PETS</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="sub-menu sub-menu-2">
+                                                            <a href="">HOME DECOR</a>
+                                                            <ul>
+                                                                <li><a href="~/_Archive/index-3.html">BATHROOM</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">KITCHEN</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">LAMPS</a></li>
+                                                                <li><a href="~/_Archive/index-3.html">WALL DECOR</a></li>
+                                                            </ul>
+                                                        </li>
                                                     </ul>
                                                 </li>
+
+                                                <li class="sub-menu sub-menu-1">
+                                                    <a href="~/_Archive/index-1.html">about us</a>
+                                                    <ul>
+                                                        <li><a href="~/_Archive/index-1.html">who we are</a></li>
+                                                        <li><a href="~/_Archive/index-1.html">our mission</a></li>
+                                                        <li><a href="~/_Archive/index-1.html">history</a></li>
+                                                        <li><a href="~/_Archive/404.html">404 page not found</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <li><a href="index-2.html">services</a></li>
+
                                                 @*<li><a href="index-4.html">prices</a></li>*@
                                                 @if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/Contact")
                                                 {
@@ -140,31 +177,28 @@
                                                 {
                                                     <li>@Html.ActionLink("CONTACT", "Contact", "Home")</li>
                                                 }
-                                                @if (HttpContext.Current.Request.Url.AbsolutePath == "/Account/Login")
+
+                                                @if (!Request.IsAuthenticated)
                                                 {
-                                                    <li class="active">@Html.ActionLink("LOGIN", "Login", "Account")</li>
+                                                    if (HttpContext.Current.Request.Url.AbsolutePath == "/Account/Register")
+                                                    {
+                                                        <li class="active">@Html.ActionLink("REGISTER", "Register", "Account")</li>
+                                                    }
+                                                    else
+                                                    {
+                                                        <li>@Html.ActionLink("REGISTER", "Register", "Account")</li>
+                                                    }
                                                 }
-                                                else
-                                                {
-                                                    <li>@Html.ActionLink("LOGIN", "Login", "Account")</li>
-                                                }
-                                                @if (HttpContext.Current.Request.Url.AbsolutePath == "/Account/Register")
-                                                {
-                                                    <li class="active">@Html.ActionLink("REGISTER", "Register", "Account")</li>
-                                                }
-                                                else
-                                                {
-                                                    <li>@Html.ActionLink("REGISTER", "Register", "Account")</li>
-                                                }
+
+                                                @Html.Partial("_LoginPartial")
+
                                                 @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                                                 {
                                                     <li class="sub-menu sub-menu-1">
                                                         <a>ADMIN</a>
                                                         <ul>
-                                                            <li><a href="index-1.html">who we are</a></li>
-                                                            <li><a href="index-1.html">our mission</a></li>
-                                                            <li><a href="index-1.html">history</a></li>
-                                                            <li><a href="404.html">404 page not found</a></li>
+                                                            <li><a href="@Url.Action("Index", "UsersAdmin")">Users</a></li>
+                                                            <li><a href="@Url.Action("Index", "RolesAdmin")">Roles</a></li>
                                                         </ul>
                                                     </li>
                                                 }
@@ -217,6 +251,13 @@
                             {
                                 <div class="breadcrumbs1">
                                     <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Register</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/Account/Login")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Login</div>
                                 </div>
                             }
 

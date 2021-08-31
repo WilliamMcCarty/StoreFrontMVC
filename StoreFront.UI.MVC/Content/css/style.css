@@ -121,7 +121,7 @@ footer{ }
 .navbar_ .nav{ position: relative; float: none; margin: 0; padding: 0; display: inline-block; left: auto;}
 .navbar_ .nav > li{position: relative; display: block; float: left; padding-right: 0px; white-space: nowrap; background: none;}
 .navbar_ .nav > li:first-child{}
-.navbar_ .nav > li > a{display: block; text-decoration: none; background: url(/Content/images/nav.png) center -8px no-repeat; font-family: 'Open Sans'; font-weight: 400; font-size: 18px; line-height: 57px; color: #e4c3f7; text-shadow:none; padding: 0px 25px; border: none; margin: 0; letter-spacing: 2px; text-transform: uppercase; border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px; 
+.navbar_ .nav > li a{display: block; text-decoration: none; background: url(/Content/images/nav.png) center -8px no-repeat; font-family: 'Open Sans'; font-weight: 400; font-size: 18px; line-height: 57px; color: #e4c3f7; text-shadow:none; padding: 0px 25px; border: none; margin: 0; letter-spacing: 2px; text-transform: uppercase; border-radius:0px; -moz-border-radius:0px; -webkit-border-radius:0px; 
 transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out;
 }
     .navbar_ .nav > li.active > a, .navbar_ .nav > li.active > a:hover, .navbar_ .nav > li.active > a:focus, .navbar_ .nav > li > a:hover, .navbar_ .nav > li > a:focus, .navbar_ .nav > li.sfHover > a, .navbar_ .nav > li.sfHover > a:hover {

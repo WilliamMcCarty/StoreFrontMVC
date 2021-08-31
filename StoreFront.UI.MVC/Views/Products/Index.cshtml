@@ -1,0 +1,123 @@
+﻿@model IEnumerable<StoreFront.DATA.EF.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SKU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.MainCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color.Color1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image.Image1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image1.Image1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image2.Image1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image3.Image1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image4.Image1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image5.Image1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductStatu.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size.Size1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SKU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplierID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.MainCategory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color.Color1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image.Image1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image1.Image1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image2.Image1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image3.Image1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image4.Image1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image5.Image1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductStatu.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size.Size1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+        </td>
+    </tr>
+}
+
+</table>

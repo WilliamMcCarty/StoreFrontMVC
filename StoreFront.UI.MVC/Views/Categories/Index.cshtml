@@ -1,0 +1,39 @@
+﻿@model IEnumerable<StoreFront.DATA.EF.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MainCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildCategory)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MainCategory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChildCategory)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CategorieParentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CategorieParentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CategorieParentID })
+        </td>
+    </tr>
+}
+
+</table>
