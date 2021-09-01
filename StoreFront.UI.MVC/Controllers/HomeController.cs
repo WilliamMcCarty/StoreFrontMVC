@@ -15,11 +15,16 @@ namespace IdentitySample.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";
 
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Services()
+        {
             return View();
         }
 
@@ -61,6 +66,12 @@ namespace IdentitySample.Controllers
                 return View(cvm);
             }
 
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Products()
+        {
             return View();
         }
     }

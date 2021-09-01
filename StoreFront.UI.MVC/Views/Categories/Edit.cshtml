@@ -3,48 +3,66 @@
 @{
     ViewBag.Title = "Edit";
 }
+<div id="content">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div id="content_inner">
+                    <h2>@ViewBag.Title</h2>
 
-<h2>Edit</h2>
 
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Category</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.CategorieParentID)
+                        <div class="form-horizontal">
+                            <h4>Category</h4>
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.CategorieParentID)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.MainCategory, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MainCategory, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MainCategory, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.MainCategory, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    &nbsp; &nbsp; &nbsp;@Html.EditorFor(model => model.MainCategory, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.MainCategory, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ChildCategory, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    &nbsp; &nbsp; &nbsp;@Html.EditorFor(model => model.ChildCategory, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ChildCategory, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp;
+                                    <input type="submit" class="button1" value="Save" style="width: 100px; height: 50px" />
+                                </div>
+                            </div>
+                        </div>
+                    }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ChildCategory, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ChildCategory, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ChildCategory, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                        <div>
+                            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp;&nbsp;
+                            @Html.ActionLink("Back to List", "Index")
+                        </div>
+                </div>
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

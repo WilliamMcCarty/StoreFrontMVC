@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="~/Content/css/bootstrap-responsive.css" type="text/css" media="screen">
     <link rel="stylesheet" href="~/Content/css/camera.css" type="text/css" media="screen">
     <link rel="stylesheet" href="~/Content/css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="~/Content/css/custom.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="~/Content/css/touchTouch.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="~/Content/css/isotope.css" type="text/css" media="screen">
 
     <script type="text/javascript" src="~/Content/js/jquery.js"></script>
     <script type="text/javascript" src="~/Content/js/jquery.easing.1.3.js"></script>
@@ -29,6 +32,9 @@
 
     <script type="text/javascript" src="~/Content/js/camera.js"></script>
     <script type="text/javascript" src="~/Content/js/jquery.mobile.customized.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/js/touchTouch.jquery.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.isotope.min.js"></script>
     <script>
         $(document).ready(function () {
             // camera
@@ -105,68 +111,134 @@
                                                     <li>@Html.ActionLink("HOME", "Index", "Home")</li>
                                                 }
 
-                                                <li class="sub-menu sub-menu-1">
-                                                    <a href="">PRODUCTS</a>
-                                                    <ul>
-                                                        <li class="sub-menu sub-menu-2">
-                                                            <a href="">APPAREL</a>
-                                                            <ul>
-                                                                <li><a href="~/_Archive/index-3.html">BABY ITEMS</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">JACKETS</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">SHIRTS</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">VESTS</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="sub-menu sub-menu-2">
-                                                            <a href="">COLLECTIBLES</a>
-                                                            <ul>
-                                                                <li><a href="~/_Archive/index-3.html">BIRD HOUSES</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">MYSTICAL</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">STATUES</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">VASES</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="sub-menu sub-menu-2">
-                                                            <a href="">GARDEN</a>
-                                                            <ul>
-                                                                <li><a href="~/_Archive/index-3.html">FOUNTAINS</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">OUT DOOR LIVING</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">PLANTERS & STANDS</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">STEPPING STONES</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="sub-menu sub-menu-2">
-                                                            <a href="">GIFTS</a>
-                                                            <ul>
-                                                                <li><a href="~/_Archive/index-3.html">CANDLES</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">FAITH INSPIRATION</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">FRAGRANCES</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">PETS</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="sub-menu sub-menu-2">
-                                                            <a href="">HOME DECOR</a>
-                                                            <ul>
-                                                                <li><a href="~/_Archive/index-3.html">BATHROOM</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">KITCHEN</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">LAMPS</a></li>
-                                                                <li><a href="~/_Archive/index-3.html">WALL DECOR</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
+                                                @if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/Products")
+                                                {
+                                                    <li class="sub-menu sub-menu-1 active">
+                                                        <a href="">PRODUCTS</a>
+                                                        <ul>
+                                                            <li class="sub-menu sub-menu-2">
+                                                                <a href="">APPAREL</a>
+                                                                <ul>
+                                                                    <li><a href="@Url.Action("Products", "Home")">BABY ITEMS</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">JACKETS</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">SHIRTS</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">VESTS</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="sub-menu sub-menu-2">
+                                                                <a href="">COLLECTIBLES</a>
+                                                                <ul>
+                                                                    <li><a href="@Url.Action("Products", "Home")">BIRD HOUSES</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">MYSTICAL</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">STATUES</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">VASES</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="sub-menu sub-menu-2">
+                                                                <a href="">GARDEN</a>
+                                                                <ul>
+                                                                    <li><a href="@Url.Action("Products", "Home")">FOUNTAINS</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">OUT DOOR LIVING</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">PLANTERS & STANDS</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">STEPPING STONES</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="sub-menu sub-menu-2">
+                                                                <a href="">GIFTS</a>
+                                                                <ul>
+                                                                    <li><a href="@Url.Action("Products", "Home")">CANDLES</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">FAITH INSPIRATION</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">FRAGRANCES</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">FLOWERS</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="sub-menu sub-menu-2">
+                                                                <a href="">HOME DECOR</a>
+                                                                <ul>
+                                                                    <li><a href="@Url.Action("Products", "Home")">BATHROOM</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">KITCHEN</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">LAMPS</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">WALL DECOR</a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                }
+                                                else
+                                                {
+                                                    <li class="sub-menu sub-menu-1">
+                                                        <a href="">PRODUCTS</a>
+                                                        <ul>
+                                                            <li class="sub-menu sub-menu-2">
+                                                                <a href="">APPAREL</a>
+                                                                <ul>
+                                                                    <li><a href="@Url.Action("Products", "Home")">BABY ITEMS</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">JACKETS</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">SHIRTS</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">VESTS</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="sub-menu sub-menu-2">
+                                                                <a href="">COLLECTIBLES</a>
+                                                                <ul>
+                                                                    <li><a href="@Url.Action("Products", "Home")">BIRD HOUSES</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">MYSTICAL</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">STATUES</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">VASES</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="sub-menu sub-menu-2">
+                                                                <a href="">GARDEN</a>
+                                                                <ul>
+                                                                    <li><a href="@Url.Action("Products", "Home")">FOUNTAINS</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">OUT DOOR LIVING</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">PLANTERS & STANDS</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">STEPPING STONES</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="sub-menu sub-menu-2">
+                                                                <a href="">GIFTS</a>
+                                                                <ul>
+                                                                    <li><a href="@Url.Action("Products", "Home")">CANDLES</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">FAITH INSPIRATION</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">FRAGRANCES</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">FLOWERS</a></li>
+                                                                </ul>
+                                                            </li>
+                                                            <li class="sub-menu sub-menu-2">
+                                                                <a href="">HOME DECOR</a>
+                                                                <ul>
+                                                                    <li><a href="@Url.Action("Products", "Home")">BATHROOM</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">KITCHEN</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">LAMPS</a></li>
+                                                                    <li><a href="@Url.Action("Products", "Home")">WALL DECOR</a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                }
 
-                                                <li class="sub-menu sub-menu-1">
-                                                    <a href="~/_Archive/index-1.html">about us</a>
-                                                    <ul>
-                                                        <li><a href="~/_Archive/index-1.html">who we are</a></li>
-                                                        <li><a href="~/_Archive/index-1.html">our mission</a></li>
-                                                        <li><a href="~/_Archive/index-1.html">history</a></li>
-                                                        <li><a href="~/_Archive/404.html">404 page not found</a></li>
-                                                    </ul>
-                                                </li>
+                                                @if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/About")
+                                                {
+                                                    <li class="active">
+                                                        @Html.ActionLink("ABOUT US", "About", "Home")
+                                                    </li>
+                                                }
+                                                else
+                                                {
+                                                    <li>
+                                                        @Html.ActionLink("ABOUT US", "About", "Home")
+                                                    </li>
+                                                }
 
-                                                <li><a href="index-2.html">services</a></li>
+                                                @if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/Services")
+                                                {
+                                                    <li class="active">@Html.ActionLink("SERVICES", "Services", "Home")</li>
+                                                }
+                                                else
+                                                {
+                                                    <li>@Html.ActionLink("SERVICES", "Services", "Home")</li>
+                                                }
 
                                                 @*<li><a href="index-4.html">prices</a></li>*@
                                                 @if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/Contact")
@@ -194,13 +266,30 @@
 
                                                 @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                                                 {
-                                                    <li class="sub-menu sub-menu-1">
-                                                        <a>ADMIN</a>
-                                                        <ul>
-                                                            <li><a href="@Url.Action("Index", "UsersAdmin")">Users</a></li>
-                                                            <li><a href="@Url.Action("Index", "RolesAdmin")">Roles</a></li>
-                                                        </ul>
-                                                    </li>
+                                                    if (HttpContext.Current.Request.Url.AbsolutePath == "/UsersAdmin" ||
+                                                        HttpContext.Current.Request.Url.AbsolutePath == "/RolesAdmin" ||
+                                                        HttpContext.Current.Request.Url.AbsolutePath == "/Categories")
+                                                    {
+                                                        <li class="sub-menu sub-menu-1 active">
+                                                            <a href="">ADMIN</a>
+                                                            <ul>
+                                                                <li><a href="@Url.Action("Index", "UsersAdmin")">Users</a></li>
+                                                                <li><a href="@Url.Action("Index", "RolesAdmin")">Roles</a></li>
+                                                                <li><a href="@Url.Action("Index", "Categories")">Edit Categories</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    }
+                                                    else
+                                                    {
+                                                        <li class="sub-menu sub-menu-1">
+                                                            <a href="">ADMIN</a>
+                                                            <ul>
+                                                                <li><a href="@Url.Action("Index", "UsersAdmin")">Users</a></li>
+                                                                <li><a href="@Url.Action("Index", "RolesAdmin")">Roles</a></li>
+                                                                <li><a href="@Url.Action("Index", "Categories")">Edit Categories</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    }
                                                 }
                                             </ul>
                                         </div>
@@ -216,23 +305,23 @@
 
                                             <div data-src="/Content/images/slide03.jpg">
                                                 <div class="camera_caption fadeIn">
-                                                    <div class="txt1">Bouquets</div>
+                                                    <div class="txt1">Gifts</div>
                                                     <div class="txt2">for all occasions</div>
-                                                    <div class="txt3">Find the freshest flowers and hand tied</div>
+                                                    <div class="txt3">Find that special gift for that special person.</div>
                                                 </div>
                                             </div>
                                             <div data-src="/Content/images/slide04.jpg">
                                                 <div class="camera_caption fadeIn">
-                                                    <div class="txt1">Bouquets</div>
+                                                    <div class="txt1">Collectibles</div>
                                                     <div class="txt2">for all occasions</div>
-                                                    <div class="txt3">Find the freshest flowers and hand tied</div>
+                                                    <div class="txt3">Find that unique collectible for that special person. </div>
                                                 </div>
                                             </div>
                                             <div data-src="/Content/images/slide05.jpg">
                                                 <div class="camera_caption fadeIn">
-                                                    <div class="txt1">Bouquets</div>
+                                                    <div class="txt1">Holidays</div>
                                                     <div class="txt2">for all occasions</div>
-                                                    <div class="txt3">Find the freshest flowers and hand tied</div>
+                                                    <div class="txt3">Christmas, Valentines Day, Halloween, Easter etc...</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -258,6 +347,54 @@
                             {
                                 <div class="breadcrumbs1">
                                     <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Login</div>
+                                </div>
+                            }
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/Account/ForgotPassword")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Forgot Password</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/UsersAdmin")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Users Admin</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/RolesAdmin")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Roles Admin</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/Categories")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Categories</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/About")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;About Us</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/Services")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Services</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/Products")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Products</div>
                                 </div>
                             }
 

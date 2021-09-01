@@ -1,76 +1,77 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<title>gallery</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Your description">
-<meta name="keywords" content="Your keywords">
-<meta name="author" content="Your name">
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <title>gallery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Your name">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 
-<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
-<link rel="stylesheet" href="css/bootstrap-responsive.css" type="text/css" media="screen">  
-<link rel="stylesheet" href="css/touchTouch.css" type="text/css" media="screen">
-<link rel="stylesheet" href="css/isotope.css" type="text/css" media="screen">      
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/touchTouch.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/isotope.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/touchTouch.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/isotope.css" type="text/css" media="screen">
 
-<script type="text/javascript" src="js/jquery.js"></script>  
-<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="js/superfish.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/superfish.js"></script>
 
-<script type="text/javascript" src="js/jquery.ui.totop.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.totop.js"></script>
 
-<script type="text/javascript" src="js/touchTouch.jquery.js"></script>
-<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
-<script>
-$(document).ready(function() {
-	// 
+    <script type="text/javascript" src="js/touchTouch.jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //
 
-}); //
-$(window).load(function() {
-	// isotop
-	var $container = $('#isotope-items'),
-		$optionSet = $('#isotope-options'), 
-	    $optionSets = $('#isotope-filters'), 
-	    $optionLinks = $optionSets.find('a'); 
-    $container.isotope({ 
-        filter: '*',
-        layoutMode: 'fitRows'
-    });  
-   	$optionLinks.click(function(){ 
-   		var $this = $(this); 
-    	// don't proceed if already selected 
-		if ( $this.hasClass('selected') ) { 
-			return false; 
-		}    		
-   		$optionSet.find('.selected').removeClass('selected'); 
-   		$this.addClass('selected');
+        }); //
+        $(window).load(function () {
+            // isotop
+            var $container = $('#isotope-items'),
+                $optionSet = $('#isotope-options'),
+                $optionSets = $('#isotope-filters'),
+                $optionLinks = $optionSets.find('a');
+            $container.isotope({
+                filter: '*',
+                layoutMode: 'fitRows'
+            });
+            $optionLinks.click(function () {
+                var $this = $(this);
+                // don't proceed if already selected
+                if ($this.hasClass('selected')) {
+                    return false;
+                }
+                $optionSet.find('.selected').removeClass('selected');
+                $this.addClass('selected');
 
-        var selector = $(this).attr('data-filter'); 
-        $container.isotope({ 
-            filter: selector            
-        }); 
-      	return false; 
-    });    	
-	$(window).on("resize", function( event ) {	
-		$container.isotope('reLayout');		
-	});		
+                var selector = $(this).attr('data-filter');
+                $container.isotope({
+                    filter: selector
+                });
+                return false;
+            });
+            $(window).on("resize", function (event) {
+                $container.isotope('reLayout');
+            });
 
-	// touchTouch
-	$('.thumb-isotope .thumbnail a').touchTouch();
+            // touchTouch
+            $('.thumb-isotope .thumbnail a').touchTouch();
 
-}); //
-</script>		
-<!--[if lt IE 8]>
-		<div style='text-align:center'><a href="https://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>
-	<![endif]-->    
-
-<!--[if lt IE 9]>
-  <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
-<![endif]-->
+        }); //
+    </script>
+    <!--[if lt IE 8]>
+            <div style='text-align:center'><a href="https://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>
+        <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
+    <![endif]-->
 </head>
 
 <body class="subpage">

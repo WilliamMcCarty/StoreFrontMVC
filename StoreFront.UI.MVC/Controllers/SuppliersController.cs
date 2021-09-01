@@ -12,6 +12,7 @@ namespace StoreFront.UI.MVC.Controllers
 {
     public class SuppliersController : Controller
     {
+        [Authorize(Roles = "Admin")]
         private StoreFrontEntities db = new StoreFrontEntities();
 
         // GET: Suppliers
