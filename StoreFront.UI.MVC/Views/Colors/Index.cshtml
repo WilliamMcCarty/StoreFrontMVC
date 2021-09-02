@@ -1,33 +1,43 @@
 ﻿@model IEnumerable<StoreFront.DATA.EF.Color>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Colors";
 }
 
-<h2>Index</h2>
+<div id="content">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div id="content_inner">
+                    <h2>@ViewBag.Title</h2>
+                    <p>
+                        @Html.ActionLink("Create New", "Create")
+                    </p>
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Color1)
+                            </th>
+                            <th></th>
+                        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Color1)
-        </th>
-        <th></th>
-    </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Color1)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.ColorVariantID }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.ColorVariantID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ColorVariantID })
+                                </td>
+                            </tr>
+                        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Color1)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ColorVariantID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ColorVariantID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ColorVariantID })
-        </td>
-    </tr>
-}
-
-</table>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

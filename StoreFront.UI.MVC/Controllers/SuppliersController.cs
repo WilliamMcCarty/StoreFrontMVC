@@ -10,9 +10,9 @@ using StoreFront.DATA.EF;
 
 namespace StoreFront.UI.MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class SuppliersController : Controller
-    {
-        [Authorize(Roles = "Admin")]
+    {        
         private StoreFrontEntities db = new StoreFrontEntities();
 
         // GET: Suppliers

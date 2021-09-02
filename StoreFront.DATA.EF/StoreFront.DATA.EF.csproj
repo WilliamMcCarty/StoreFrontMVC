@@ -65,6 +65,7 @@
     <Compile Include="Image.cs">
       <DependentUpon>StoreFrontModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MetaData\StoreFrontMetaData.cs" />
     <Compile Include="Product.cs">
       <DependentUpon>StoreFrontModel.tt</DependentUpon>
     </Compile>
@@ -122,5 +123,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

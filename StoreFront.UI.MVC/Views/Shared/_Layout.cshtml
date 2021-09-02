@@ -268,7 +268,15 @@
                                                 {
                                                     if (HttpContext.Current.Request.Url.AbsolutePath == "/UsersAdmin" ||
                                                         HttpContext.Current.Request.Url.AbsolutePath == "/RolesAdmin" ||
-                                                        HttpContext.Current.Request.Url.AbsolutePath == "/Categories")
+                                                        HttpContext.Current.Request.Url.AbsolutePath == "/Categories" ||
+                                                        HttpContext.Current.Request.Url.AbsolutePath == "/Colors" ||
+                                                        HttpContext.Current.Request.Url.AbsolutePath == "/Departments" ||
+                                                        HttpContext.Current.Request.Url.AbsolutePath == "/Employees" ||
+                                                        HttpContext.Current.Request.Url.AbsolutePath == "/Images" ||
+                                                        HttpContext.Current.Request.Url.AbsolutePath == "/Products" ||
+                                                        HttpContext.Current.Request.Url.AbsolutePath == "/ProductStatus" ||
+                                                        HttpContext.Current.Request.Url.AbsolutePath == "/Sizesn" ||
+                                                        HttpContext.Current.Request.Url.AbsolutePath == "/Suppliers")
                                                     {
                                                         <li class="sub-menu sub-menu-1 active">
                                                             <a href="">ADMIN</a>
@@ -276,6 +284,14 @@
                                                                 <li><a href="@Url.Action("Index", "UsersAdmin")">Users</a></li>
                                                                 <li><a href="@Url.Action("Index", "RolesAdmin")">Roles</a></li>
                                                                 <li><a href="@Url.Action("Index", "Categories")">Edit Categories</a></li>
+                                                                <li><a href="@Url.Action("Index", "Colors")">Edit Colors</a></li>
+                                                                <li><a href="@Url.Action("Index", "Departments")">Edit Departments</a></li>
+                                                                <li><a href="@Url.Action("Index", "Employees")">Edit Employees</a></li>
+                                                                <li><a href="@Url.Action("Index", "Images")">Edit Images</a></li>
+                                                                <li><a href="@Url.Action("Index", "Products")">Edit Products</a></li>
+                                                                <li><a href="@Url.Action("Index", "ProductStatus")">Edit Product Status</a></li>
+                                                                <li><a href="@Url.Action("Index", "Sizes")">Edit Sizes</a></li>
+                                                                <li><a href="@Url.Action("Index", "Suppliers")">Edit Suppliers</a></li>
                                                             </ul>
                                                         </li>
                                                     }
@@ -287,6 +303,14 @@
                                                                 <li><a href="@Url.Action("Index", "UsersAdmin")">Users</a></li>
                                                                 <li><a href="@Url.Action("Index", "RolesAdmin")">Roles</a></li>
                                                                 <li><a href="@Url.Action("Index", "Categories")">Edit Categories</a></li>
+                                                                <li><a href="@Url.Action("Index", "Colors")">Edit Colors</a></li>
+                                                                <li><a href="@Url.Action("Index", "Departments")">Edit Departments</a></li>
+                                                                <li><a href="@Url.Action("Index", "Employees")">Edit Employees</a></li>
+                                                                <li><a href="@Url.Action("Index", "Images")">Edit Images</a></li>
+                                                                <li><a href="@Url.Action("Index", "Products")">Edit Products</a></li>
+                                                                <li><a href="@Url.Action("Index", "ProductStatus")">Edit Product Status</a></li>
+                                                                <li><a href="@Url.Action("Index", "Sizes")">Edit Sizes</a></li>
+                                                                <li><a href="@Url.Action("Index", "Suppliers")">Edit Suppliers</a></li>
                                                             </ul>
                                                         </li>
                                                     }
@@ -374,6 +398,62 @@
                             {
                                 <div class="breadcrumbs1">
                                     <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Categories</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/Colors")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Colors</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/Departments")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Departments</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/Employees")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Employees</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/Images")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Images</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/Products")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Products</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/ProductStatus")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Product Status</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/Sizes")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Sizes</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath == "/Suppliers")
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Suppliers</div>
                                 </div>
                             }
 
