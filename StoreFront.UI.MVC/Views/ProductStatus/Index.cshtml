@@ -1,33 +1,44 @@
 ﻿@model IEnumerable<StoreFront.DATA.EF.ProductStatus>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Product Status";
 }
 
-<h2>Index</h2>
+<div id="content">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div id="content_inner">
+                    <h2>@ViewBag.Title</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th></th>
-    </tr>
+                    <p>
+                        @Html.ActionLink("Create New", "Create", null, new { @class = "button1 noUnderLine" })
+                    </p>
+                    <table class="table">
+                        <tr>
+                            <th class="adminFontSize">
+                                @Html.DisplayNameFor(model => model.Status)
+                            </th>
+                            <th></th>
+                        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StatusID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StatusID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StatusID })
-        </td>
-    </tr>
-}
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="adminFontSize">
+                                    @Html.DisplayFor(modelItem => item.Status)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.StatusID }, new { @class = "button1 noUnderLine pull-right" })
+                                    @Html.ActionLink("Details", "Details", new { id = item.StatusID }, new { @class = "button1 noUnderLine pull-right" })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.StatusID }, new { @class = "button1 noUnderLine pull-right" })
+                                </td>
+                            </tr>
+                        }
 
-</table>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

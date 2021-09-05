@@ -3,11 +3,15 @@ using System.Net;
 using System.Net.Mail;
 using System.Web.Mvc;
 using StoreFront.UI.MVC;
+using StoreFront.DATA.EF;
+using System.Linq;
 
-namespace IdentitySample.Controllers    
+namespace IdentitySample.Controllers
 {
     public class HomeController : Controller
     {
+        private StoreFrontEntities db = new StoreFrontEntities();
+
         [HttpGet]
         public ActionResult Index()
         {
@@ -72,7 +76,90 @@ namespace IdentitySample.Controllers
         [HttpGet]
         public ActionResult Products()
         {
-            return View();
+            ViewBag.Categories = "All Products";
+
+            var products = (from p in db.Products
+                            orderby p.Category.MainCategory, p.Category.ChildCategory, p.Title
+                            select p).ToList();
+
+            if (products == null)
+            {
+                return View();
+            }
+
+            //return View(products);            
+            return View(products);
+        }
+
+        [HttpGet]
+        public ActionResult ProductsByMainCategory(int? id)
+        {
+            if (id == null)
+            {
+                return View();
+            }
+
+            var categories = (from p in db.Categories
+                              where p.CategorieParentID == id
+                              orderby p.MainCategory
+                              select p).ToList();
+
+            if (categories == null)
+            {
+                return View();
+            }
+
+            string sMainCategory = "";
+
+            foreach (var item in categories)
+            {
+                sMainCategory = item.MainCategory;
+
+                break;
+            }
+
+            var products = (from p in db.Products
+                            where p.Category.MainCategory == sMainCategory
+                            orderby p.Category.MainCategory, p.Category.ChildCategory, p.Title
+                            select p).ToList();
+
+            if (products == null)
+            {
+                return View();
+            }
+
+            ViewBag.Categories = sMainCategory;
+
+            //return View(products2);            
+            return View(products);
+        }
+
+        [HttpGet]
+        public ActionResult ProductsByCategory(int? id)
+        {
+            if (id == null)
+            {
+                return View();
+            }
+
+            var products = (from p in db.Products
+                            where p.CategoriesID == id
+                            orderby p.Title
+                            select p).ToList();
+
+            if (products == null)
+            {
+                return View();
+            }
+
+            foreach (var item in products)
+            {
+                ViewBag.Categories = item.Category.MainCategory + " | ";
+                ViewBag.Categories += item.Category.ChildCategory;
+            }
+
+            //return View(products);
+            return View(products);
         }
     }
 }

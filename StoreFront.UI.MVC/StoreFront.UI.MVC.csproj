@@ -216,6 +216,8 @@
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\functions.php" />
     <Content Include="Content\images\about01.jpg" />
+    <Content Include="Content\images\Apparel\BabyItems\baby-premium-tee-pink-front-6083675f2392d.jpg" />
+    <Content Include="Content\images\Apparel\Vests\GFVBIK42_800.jpg" />
     <Content Include="Content\images\arrows.png" />
     <Content Include="Content\images\arr_left.png" />
     <Content Include="Content\images\arr_right.png" />
@@ -227,6 +229,7 @@
     <Content Include="Content\images\camera-loader.gif" />
     <Content Include="Content\images\camera_paper1.png" />
     <Content Include="Content\images\camera_skins.png" />
+    <Content Include="Content\images\Collectibles\BirdHouses\two-story-pedestal-birdhouse-36.jpg" />
     <Content Include="Content\images\contacts01.jpg" />
     <Content Include="Content\images\corner1.jpg" />
     <Content Include="Content\images\corner2.jpg" />
@@ -245,6 +248,10 @@
     <Content Include="Content\images\gallery10.jpg" />
     <Content Include="Content\images\gallery11.jpg" />
     <Content Include="Content\images\gallery12.jpg" />
+    <Content Include="Content\images\Garden\Fountains\wishing-well-water-fountain-34.jpg" />
+    <Content Include="Content\images\Gifts\Candles\hot-apple-pie-scented-candle-3x4-7.jpg" />
+    <Content Include="Content\images\Gifts\Flowers\beautiful-red-flowers-candle-holder-13.jpg" />
+    <Content Include="Content\images\Gifts\Flowers\lov-lav-med.jpg" />
     <Content Include="Content\images\line1_px.png" />
     <Content Include="Content\images\li_st1.png" />
     <Content Include="Content\images\loader.gif" />
@@ -527,6 +534,8 @@
     <Content Include="Views\Suppliers\Index.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Home\ProductsByCategory.cshtml" />
+    <Content Include="Views\Home\ProductsByMainCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

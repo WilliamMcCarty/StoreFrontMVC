@@ -1,9 +1,7 @@
 ﻿@model IEnumerable<StoreFront.DATA.EF.Product>
 
 @{
-    /**/
-
-    ViewBag.Title = "Products";
+    ViewBag.Title = "Products By Main Category";
 }
 
 <script>
@@ -47,8 +45,10 @@
 </script>
 
 
+
 <br />
 <center style="font-size: 20px">@ViewBag.Categories</center>
+
 
 
 
@@ -62,14 +62,15 @@
                     <div class="row">
                         <div class="span12">
 
-                            @*<div id="isotope-options">
-                                    <ul id="isotope-filters" class="clearfix">
-                                        <li><a href="#" class="selected" data-filter="*">show all</a></li>
-                                        <li><a href="#" data-filter=".isotope-filter1">Baby Items</a></li>
-                                        <li><a href="#" data-filter=".isotope-filter2">Jackets</a></li>
-                                        <li><a href="#" data-filter=".isotope-filter3">Shirts</a></li>
-                                    </ul>
-                                </div>*@
+                            <div id="isotope-options">
+                                <ul id="isotope-filters" class="clearfix">
+                                    <li><a href="#" class="selected" data-filter="*">show all</a></li>
+                                    <li><a href="#" data-filter=".isotope-filter1">Baby Items</a></li>
+                                    <li><a href="#" data-filter=".isotope-filter2">Jackets</a></li>
+                                    <li><a href="#" data-filter=".isotope-filter3">Shirts</a></li>
+                                    <li><a href="#" data-filter=".isotope-filter4">Vests</a></li>
+                                </ul>
+                            </div>
 
                             @if (Model.Count() == 0)
                             {
@@ -78,11 +79,12 @@
                             else
                             {
                                 <ul class="thumbnails" id="isotope-items">
+                                    @{int count = 1; }
+
                                     @foreach (var item in Model)
                                     {
 
-
-                                        <li class="span3 isotope-element isotope-filter1">
+                                        <li class="span3 isotope-element isotope-filter@{@count}">
 
                                             <div class="thumb-isotope">
                                                 <div class="thumbnail clearfix">
@@ -99,7 +101,14 @@
 
                                         </li>
 
-
+                                        if (count == 4)
+                                        {
+                                            count = 1;
+                                        }
+                                        else
+                                        {
+                                            count++;
+                                        }
                                     }
                                 </ul>
                             }
@@ -265,6 +274,62 @@
                                             <a href="~/Content/images/blank.png">
                                                 <figure>
                                                     <img src="~/Content/images/gallery12.jpg" alt=""><em></em>
+                                                </figure>
+                                                <div class="caption">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="span3 isotope-element isotope-filter4">
+                                    <div class="thumb-isotope">
+                                        <div class="thumbnail clearfix">
+                                            <a href="~/Content/images/blank.png">
+                                                <figure>
+                                                    <img src="~/Content/images/gallery10.jpg" alt=""><em></em>
+                                                </figure>
+                                                <div class="caption">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="span3 isotope-element isotope-filter4">
+                                    <div class="thumb-isotope">
+                                        <div class="thumbnail clearfix">
+                                            <a href="~/Content/images/blank.png">
+                                                <figure>
+                                                    <img src="~/Content/images/gallery11.jpg" alt=""><em></em>
+                                                </figure>
+                                                <div class="caption">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="span3 isotope-element isotope-filter4">
+                                    <div class="thumb-isotope">
+                                        <div class="thumbnail clearfix">
+                                            <a href="~/Content/images/blank.png">
+                                                <figure>
+                                                    <img src="~/Content/images/gallery12.jpg" alt=""><em></em>
+                                                </figure>
+                                                <div class="caption">
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="span3 isotope-element isotope-filter4">
+                                    <div class="thumb-isotope">
+                                        <div class="thumbnail clearfix">
+                                            <a href="~/Content/images/blank.png">
+                                                <figure>
+                                                    <img src="~/Content/images/gallery04.jpg" alt=""><em></em>
                                                 </figure>
                                                 <div class="caption">
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.

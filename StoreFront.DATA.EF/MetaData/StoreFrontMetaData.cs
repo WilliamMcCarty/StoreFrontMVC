@@ -144,6 +144,7 @@ namespace StoreFront.DATA.EF//.MetaData
     #region Image
     public class ImageMetadata
     {
+        [Display(Name = "Image")]
         public int ImageID { get; set; }
 
         [Required]
@@ -160,7 +161,43 @@ namespace StoreFront.DATA.EF//.MetaData
     #endregion
 
     #region Product
+    public class ProductMetadata
+    {
+        public int ProductID { get; set; }
+        public Nullable<int> SizeVariantID { get; set; }
+        public Nullable<int> ColorVariantID { get; set; }
+        public int CategoriesID { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string SKU { get; set; }
+        public decimal Price { get; set; }
+        public int Stock { get; set; }
+        public Nullable<int> StatusID { get; set; }
+        public int ImageID { get; set; }
+        public Nullable<int> ImageID1 { get; set; }
+        public Nullable<int> ImageID2 { get; set; }
+        public Nullable<int> ImageID3 { get; set; }
+        public Nullable<int> ImageID4 { get; set; }
+        public Nullable<int> ImageID5 { get; set; }
+        public int SupplierID { get; set; }
 
+        public virtual Category Category { get; set; }
+        public virtual Color Color { get; set; }
+        public virtual Image Image { get; set; }
+        public virtual Image Image1 { get; set; }
+        public virtual Image Image2 { get; set; }
+        public virtual Image Image3 { get; set; }
+        public virtual Image Image4 { get; set; }
+        public virtual Image Image5 { get; set; }
+        public virtual ProductStatus ProductStatu { get; set; }
+        public virtual Size Size { get; set; }
+    }
+
+    [MetadataType(typeof(ProductMetadata))]
+    public partial class Product
+    {
+        //this is typically empty, unless you need to create custom properties
+    }
     #endregion
 
     #region Product Status
@@ -199,6 +236,15 @@ namespace StoreFront.DATA.EF//.MetaData
     #endregion
 
     #region Supplier
+    public class SupplierMetadata
+    {
 
+    }
+
+    [MetadataType(typeof(SupplierMetadata))]
+    public partial class Suppler
+    {
+        //this is typically empty, unless you need to create custom properties
+    }
     #endregion
 }

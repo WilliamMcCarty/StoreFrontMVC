@@ -11,11 +11,11 @@
                 <div id="content_inner">
                     <h2>@ViewBag.Title</h2>
                     <p>
-                        @Html.ActionLink("Create New", "Create")
+                        @Html.ActionLink("Create New", "Create", null, new { @class = "button1 noUnderLine" })
                     </p>
                     <table class="table">
                         <tr>
-                            <th>
+                            <th class="adminFontSize">
                                 @Html.DisplayNameFor(model => model.Color1)
                             </th>
                             <th></th>
@@ -24,13 +24,13 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>
+                                <td class="adminFontSize">
                                     @Html.DisplayFor(modelItem => item.Color1)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.ColorVariantID }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.ColorVariantID }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.ColorVariantID })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.ColorVariantID }, new { @class = "button1 noUnderLine pull-right" })
+                                    @Html.ActionLink("Details", "Details", new { id = item.ColorVariantID }, new { @class = "button1 noUnderLine pull-right" })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.ColorVariantID }, new { @class = "button1 noUnderLine pull-right" })
                                 </td>
                             </tr>
                         }

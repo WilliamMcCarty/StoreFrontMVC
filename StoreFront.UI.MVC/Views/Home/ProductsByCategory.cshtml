@@ -1,9 +1,7 @@
 ﻿@model IEnumerable<StoreFront.DATA.EF.Product>
 
 @{
-    /**/
-
-    ViewBag.Title = "Products";
+    ViewBag.Title = "Products By Categories ";
 }
 
 <script>
@@ -54,7 +52,9 @@
 
 
 <div id="content">
+
     <div class="container">
+
         <div class="row">
             <div class="span12">
                 <div id="content_inner">
@@ -65,9 +65,9 @@
                             @*<div id="isotope-options">
                                     <ul id="isotope-filters" class="clearfix">
                                         <li><a href="#" class="selected" data-filter="*">show all</a></li>
-                                        <li><a href="#" data-filter=".isotope-filter1">Baby Items</a></li>
-                                        <li><a href="#" data-filter=".isotope-filter2">Jackets</a></li>
-                                        <li><a href="#" data-filter=".isotope-filter3">Shirts</a></li>
+                                        <li><a href="#" data-filter=".isotope-filter1">category 1</a></li>
+                                        <li><a href="#" data-filter=".isotope-filter2">category 2</a></li>
+                                        <li><a href="#" data-filter=".isotope-filter3">category 3</a></li>
                                     </ul>
                                 </div>*@
 
@@ -88,9 +88,9 @@
                                                 <div class="thumbnail clearfix">
                                                     <a href="#">
                                                         <figure>
-                                                            <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 270px; width: 270px;" /><em></em>
+                                                            <img src="@item.Image.Image1" alt="@item.Title cover image"  style="height: 270px; width: 270px;" /><em></em>
                                                         </figure>
-                                                        <div class="caption" style="height: 55px; width: 241px;">
+                                                        <div class="caption"  style="height: 55px; width: 241px;">
                                                             @Html.DisplayFor(modelItem => item.Title)
                                                         </div>
                                                     </a>

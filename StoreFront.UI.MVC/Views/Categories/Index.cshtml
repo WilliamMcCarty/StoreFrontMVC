@@ -11,14 +11,14 @@
                     <h2>@ViewBag.Title</h2>
 
                     <p>
-                        @Html.ActionLink("Create New", "Create")
+                        @Html.ActionLink("Create New", "Create", null, new { @class = "button1 noUnderLine" })
                     </p>
                     <table class="table">
                         <tr>
-                            <th>
+                            <th class="adminFontSize">
                                 @Html.DisplayNameFor(model => model.MainCategory)
                             </th>
-                            <th>
+                            <th class="adminFontSize">
                                 @Html.DisplayNameFor(model => model.ChildCategory)
                             </th>
                             <th></th>
@@ -27,16 +27,16 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>
+                                <td class="adminFontSize">
                                     @Html.DisplayFor(modelItem => item.MainCategory)
                                 </td>
-                                <td>
+                                <td class="adminFontSize">
                                     @Html.DisplayFor(modelItem => item.ChildCategory)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.CategorieParentID }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.CategorieParentID }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.CategorieParentID })
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.CategorieParentID }, new { @class = "button1 noUnderLine pull-right" })
+                                    @Html.ActionLink("Details", "Details", new { id = item.CategorieParentID }, new { @class = "button1 noUnderLine pull-right" })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.CategorieParentID }, new { @class = "button1 noUnderLine pull-right" })
                                 </td>
                             </tr>
                         }
