@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using StoreFront.UI.MVC;
 using StoreFront.DATA.EF;
 using System.Linq;
+using System;
 
 namespace IdentitySample.Controllers
 {
@@ -15,7 +16,19 @@ namespace IdentitySample.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            var products = (from p in db.Products
+                            orderby p.Category.MainCategory, p.Category.ChildCategory, p.Title
+                            select p).ToList();
+
+            if (products == null)
+            {
+                return View();
+            }
+
+            var products2 = products.OrderBy(x => Guid.NewGuid()).Take(3);
+                        
+            //return View(products);            
+            return View(products2);
         }
 
         [HttpGet]
@@ -116,6 +129,38 @@ namespace IdentitySample.Controllers
                 sMainCategory = item.MainCategory;
 
                 break;
+            }
+
+            var childCategories = (from p in db.Categories
+                                   where p.MainCategory == sMainCategory
+                                   orderby p.ChildCategory
+                                   select p).ToList();
+
+            if (childCategories == null)
+            {
+                return View();
+            }
+
+            int count = 1;
+            foreach (var item in childCategories)
+            {
+                if (count == 1)
+                {
+                    ViewBag.Cat1 = item.ChildCategory;
+                }
+                if (count == 2)
+                {
+                    ViewBag.Cat2 = item.ChildCategory;
+                }
+                if (count == 3)
+                {
+                    ViewBag.Cat3 = item.ChildCategory;
+                }
+                if (count == 4)
+                {
+                    ViewBag.Cat4 = item.ChildCategory;
+                }
+                count++;
             }
 
             var products = (from p in db.Products

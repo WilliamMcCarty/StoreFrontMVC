@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<StoreFront.DATA.EF.Product>
+
+@{
     ViewBag.Title = "Home";
 }
 
@@ -14,41 +16,49 @@
                         <a href="#" class="button1">Visite our portfolio</a>
                     </div>
 
+
+
                     <div class="banners">
                         <div class="row">
-                            <div class="span4 banner banner1">
-                                <div class="banner_inner">
-                                    <a href="#">
-                                        <img src="~/Content/images/banner1.jpg" alt="" class="img">
-                                        <div class="caption">
-                                            <div class="txt1">Exclusive plants</div>
-                                            <div class="txt2">Lorem ipsum dolor sit amet</div>
-                                        </div>
-                                    </a>
+                            @{int count = 1; }
+                            @foreach (var item in Model)
+                            {
+                                <div class="span4 banner banner@{@count}">
+                                    <div class="banner_inner">
+                                        <a href="#">
+                                            <img src="@item.Image.Image1" alt="" style="height: 270px; width: 270px;" class="borderCurve boxShadow">
+                                            <div class="caption borderCurve boxShadow" style="height: 100px; width: 270px;">
+                                                <div class="txt1">Featured Product</div>
+                                                <div class="txt2">@Html.DisplayFor(modelItem => item.Title)</div>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="span4 banner banner2">
-                                <div class="banner_inner">
-                                    <a href="#">
-                                        <img src="~/Content/images/banner2.jpg" alt="" class="img">
-                                        <div class="caption">
-                                            <div class="txt1">Flower Designs</div>
-                                            <div class="txt2">Lorem ipsum dolor sit amet</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="span4 banner banner3">
-                                <div class="banner_inner">
-                                    <a href="#">
-                                        <img src="~/Content/images/banner3.jpg" alt="" class="img">
-                                        <div class="caption">
-                                            <div class="txt1">Holidays & Occasions</div>
-                                            <div class="txt2">Lorem ipsum dolor sit amet</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+                                count++;
+                            }
+
+                            @*<div class="span4 banner banner2">
+            <div class="banner_inner">
+                <a href="#">
+                    <img src="~/Content/images/banner2.jpg" alt="" class="img">
+                    <div class="caption">
+                        <div class="txt1">Featured Product</div>
+                        <div class="txt2">Title</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="span4 banner banner3">
+            <div class="banner_inner">
+                <a href="#">
+                    <img src="~/Content/images/banner3.jpg" alt="" class="img">
+                    <div class="caption">
+                        <div class="txt1">Featured Product</div>
+                        <div class="txt2">Title</div>
+                    </div>
+                </a>
+            </div>
+        </div>*@
                         </div>
                     </div>
 

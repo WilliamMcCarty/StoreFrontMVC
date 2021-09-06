@@ -170,6 +170,7 @@ namespace StoreFront.DATA.EF//.MetaData
         public string Title { get; set; }
         public string Description { get; set; }
         public string SKU { get; set; }
+        [DisplayFormat(DataFormatString = "{0:c}")]
         public decimal Price { get; set; }
         public int Stock { get; set; }
         public Nullable<int> StatusID { get; set; }

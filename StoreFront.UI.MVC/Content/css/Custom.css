@@ -12,3 +12,22 @@
 {
     font-size: 15px; 
 }
+
+.textShadow {
+    text-shadow: 2px 4px 5px mediumpurple;
+}
+
+.boxShadow {
+    box-shadow: 5px 5px 5px mediumpurple;
+    border-radius: 20px;
+}
+
+.categoriesFontSize
+{
+    font-size: 25px;
+}
+
+.borderCurve 
+{
+    border-radius: 20px;
+}

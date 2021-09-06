@@ -46,7 +46,7 @@
 
 
 <br />
-<center style="font-size: 20px">@ViewBag.Categories</center>
+<center class="categoriesFontSize textShadow">@ViewBag.Categories</center>
 
 
 
@@ -88,9 +88,11 @@
                                                 <div class="thumbnail clearfix">
                                                     <a href="#">
                                                         <figure>
-                                                            <img src="@item.Image.Image1" alt="@item.Title cover image"  style="height: 270px; width: 270px;" /><em></em>
+                                                            <img src="@item.Image.Image1" alt="@item.Title cover image"  style="height: 270px; width: 270px;" class="borderCurve boxShadow" /><em></em>
                                                         </figure>
-                                                        <div class="caption"  style="height: 55px; width: 241px;">
+                                                        <div class="caption borderCurve boxShadow" style="height: 100px; width: 241px;">
+                                                            @Html.DisplayFor(modelItem => item.Price)
+                                                            <br /><br />
                                                             @Html.DisplayFor(modelItem => item.Title)
                                                         </div>
                                                     </a>
@@ -104,7 +106,7 @@
                                 </ul>
                             }
 
-                            <ul class="thumbnails" id="isotope-items">
+                            @*<ul class="thumbnails" id="isotope-items">
                                 <li class="span3 isotope-element isotope-filter1">
                                     <div class="thumb-isotope">
                                         <div class="thumbnail clearfix">
@@ -273,7 +275,7 @@
                                         </div>
                                     </div>
                                 </li>
-                            </ul>
+                            </ul>*@
                         </div>
                     </div>
                 </div>

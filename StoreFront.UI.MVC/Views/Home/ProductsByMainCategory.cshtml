@@ -47,7 +47,7 @@
 
 
 <br />
-<center style="font-size: 20px">@ViewBag.Categories</center>
+<center class="categoriesFontSize textShadow">@ViewBag.Categories</center>
 
 
 
@@ -65,10 +65,10 @@
                             <div id="isotope-options">
                                 <ul id="isotope-filters" class="clearfix">
                                     <li><a href="#" class="selected" data-filter="*">show all</a></li>
-                                    <li><a href="#" data-filter=".isotope-filter1">Baby Items</a></li>
-                                    <li><a href="#" data-filter=".isotope-filter2">Jackets</a></li>
-                                    <li><a href="#" data-filter=".isotope-filter3">Shirts</a></li>
-                                    <li><a href="#" data-filter=".isotope-filter4">Vests</a></li>
+                                    <li><a href="#" data-filter=".isotope-filter1">@ViewBag.Cat1</a></li>
+                                    <li><a href="#" data-filter=".isotope-filter2">@ViewBag.Cat2</a></li>
+                                    <li><a href="#" data-filter=".isotope-filter3">@ViewBag.Cat3</a></li>
+                                    <li><a href="#" data-filter=".isotope-filter4">@ViewBag.Cat4</a></li>
                                 </ul>
                             </div>
 
@@ -78,267 +78,276 @@
                             }
                             else
                             {
-                                <ul class="thumbnails" id="isotope-items">
-                                    @{int count = 1; }
+                            <ul class="thumbnails" id="isotope-items">
+                                @{int count = 0; }
 
-                                    @foreach (var item in Model)
+                                @foreach (var item in Model)
+                                {
+                                    if (item.Category.ChildCategory == ViewBag.Cat1)
                                     {
-
-                                        <li class="span3 isotope-element isotope-filter@{@count}">
-
-                                            <div class="thumb-isotope">
-                                                <div class="thumbnail clearfix">
-                                                    <a href="#">
-                                                        <figure>
-                                                            <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 270px; width: 270px;" /><em></em>
-                                                        </figure>
-                                                        <div class="caption" style="height: 55px; width: 241px;">
-                                                            @Html.DisplayFor(modelItem => item.Title)
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                        </li>
-
-                                        if (count == 4)
-                                        {
-                                            count = 1;
-                                        }
-                                        else
-                                        {
-                                            count++;
-                                        }
+                                        count = 1;
                                     }
-                                </ul>
+                                    if (item.Category.ChildCategory == ViewBag.Cat2)
+                                    {
+                                        count = 2;
+                                    }
+                                    if (item.Category.ChildCategory == ViewBag.Cat3)
+                                    {
+                                        count = 3;
+                                    }
+                                    if (item.Category.ChildCategory == ViewBag.Cat4)
+                                    {
+                                        count = 4;
+                                    }
+
+                                    <li class="span3 isotope-element isotope-filter@{@count}">
+
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="#">
+                                                    <figure>
+                                                        <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 270px; width: 270px;" class="borderCurve boxShadow" /><em></em>
+                                                    </figure>
+                                                    <div class="caption borderCurve boxShadow" style="height: 100px; width: 241px;">
+                                                        @Html.DisplayFor(modelItem => item.Price)
+                                                        <br /><br />
+                                                        @Html.DisplayFor(modelItem => item.Title)
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </li>
+                                }
+                            </ul>
                             }
 
-                            <ul class="thumbnails" id="isotope-items">
-                                <li class="span3 isotope-element isotope-filter1">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery01.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                            @*<ul class="thumbnails" id="isotope-items">
+                                    <li class="span3 isotope-element isotope-filter1">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery01.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter2">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery02.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter2">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery02.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter3">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery03.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter3">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery03.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter1">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery04.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter1">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery04.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter2">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery05.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter2">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery05.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter3">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery06.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter3">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery06.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter1">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery07.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter1">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery07.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter2">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery08.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter2">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery08.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter3">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery09.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter3">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery09.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter1">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery10.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter1">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery10.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter2">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery11.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter2">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery11.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter3">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery12.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter3">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery12.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter4">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery10.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter4">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery10.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter4">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery11.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter4">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery11.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter4">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery12.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter4">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery12.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li class="span3 isotope-element isotope-filter4">
-                                    <div class="thumb-isotope">
-                                        <div class="thumbnail clearfix">
-                                            <a href="~/Content/images/blank.png">
-                                                <figure>
-                                                    <img src="~/Content/images/gallery04.jpg" alt=""><em></em>
-                                                </figure>
-                                                <div class="caption">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                </div>
-                                            </a>
+                                    </li>
+                                    <li class="span3 isotope-element isotope-filter4">
+                                        <div class="thumb-isotope">
+                                            <div class="thumbnail clearfix">
+                                                <a href="~/Content/images/blank.png">
+                                                    <figure>
+                                                        <img src="~/Content/images/gallery04.jpg" alt=""><em></em>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    </div>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                            </ul>
+                                    </li>
+                                </ul>*@
                         </div>
                     </div>
                 </div>
