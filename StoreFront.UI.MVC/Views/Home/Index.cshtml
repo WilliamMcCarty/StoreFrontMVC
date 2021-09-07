@@ -11,62 +11,63 @@
                 <div id="content_inner">
 
                     <div class="slogan1">
-                        <div class="txt1">Custom Floral Arrangements and wonderful gifts</div>
+                        <div class="txt1 textShadow">Custom Floral Arrangements and wonderful gifts</div>
                         <div class="txt2">Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</div>
-                        <a href="#" class="button1">Visite our portfolio</a>
+                        <a href="@Url.Action("Products", "Home")" class="button1">View Our Products</a>
                     </div>
 
 
-
-                    <div class="banners">
-                        <div class="row">
-                            @{int count = 1; }
-                            @foreach (var item in Model)
-                            {
-                                <div class="span4 banner banner@{@count}">
-                                    <div class="banner_inner">
-                                        <a href="#">
-                                            <img src="@item.Image.Image1" alt="" style="height: 270px; width: 270px;" class="borderCurve boxShadow">
-                                            <div class="caption borderCurve boxShadow" style="height: 100px; width: 270px;">
-                                                <div class="txt1">Featured Product</div>
-                                                <div class="txt2">@Html.DisplayFor(modelItem => item.Title)</div>
-                                            </div>
-                                        </a>
+                    <center>
+                        <div class="banners">
+                            <div class="row">
+                                @{int count = 1; }
+                                @foreach (var item in Model)
+                                {
+                                    <div class="span4 banner banner@{@count}">
+                                        <div class="banner_inner">
+                                            <a href="#">
+                                                <img src="@item.Image.Image1" alt="" style="height: 270px; width: 270px;" class="borderCurve boxShadow">
+                                                <div class="caption borderCurve boxShadow" style="height: 100px; width: 270px;">
+                                                    <div class="txt1">Featured Product</div>
+                                                    <div class="txt2">@Html.DisplayFor(modelItem => item.Title)</div>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                count++;
-                            }
+                                    count++;
+                                }
 
-                            @*<div class="span4 banner banner2">
-            <div class="banner_inner">
-                <a href="#">
-                    <img src="~/Content/images/banner2.jpg" alt="" class="img">
-                    <div class="caption">
-                        <div class="txt1">Featured Product</div>
-                        <div class="txt2">Title</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="span4 banner banner3">
-            <div class="banner_inner">
-                <a href="#">
-                    <img src="~/Content/images/banner3.jpg" alt="" class="img">
-                    <div class="caption">
-                        <div class="txt1">Featured Product</div>
-                        <div class="txt2">Title</div>
-                    </div>
-                </a>
-            </div>
-        </div>*@
+                                @*<div class="span4 banner banner2">
+                                        <div class="banner_inner">
+                                            <a href="#">
+                                                <img src="~/Content/images/banner2.jpg" alt="" class="img">
+                                                <div class="caption">
+                                                    <div class="txt1">Featured Product</div>
+                                                    <div class="txt2">Title</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="span4 banner banner3">
+                                        <div class="banner_inner">
+                                            <a href="#">
+                                                <img src="~/Content/images/banner3.jpg" alt="" class="img">
+                                                <div class="caption">
+                                                    <div class="txt1">Featured Product</div>
+                                                    <div class="txt2">Title</div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>*@
+                            </div>
                         </div>
-                    </div>
+                    </center>
 
                     <div class="row">
                         <div class="span8">
                             <div class="pad_right20 vl1">
 
-                                <h2>Exclusive Bouquets<br><span>lorem ipsum dolor sit amet conse ctetur</span></h2>
+                                <h2 class="textShadow">Exclusive Bouquets<br><span>lorem ipsum dolor sit amet conse ctetur</span></h2>
 
                                 <p>
                                     Lorem ipsum dolor sit amet consectetuer adipi scing elraesent ves tibm moeacus.
@@ -82,7 +83,7 @@
                         </div>
                         <div class="span4">
 
-                            <h2>Services<br><span>what we offer</span></h2>
+                            <h2 class="textShadow">Services<br><span>what we offer</span></h2>
 
                             <ul class="ul1">
                                 <li><a href="#">Quisque nullatibulum libero</a></li>
