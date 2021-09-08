@@ -167,7 +167,11 @@ namespace StoreFront.DATA.EF//.MetaData
         public Nullable<int> SizeVariantID { get; set; }
         public Nullable<int> ColorVariantID { get; set; }
         public int CategoriesID { get; set; }
+
+        [UIHint("MultilineText")]
         public string Title { get; set; }
+
+        [UIHint("MultilineText")]
         public string Description { get; set; }
         public string SKU { get; set; }
         [DisplayFormat(DataFormatString = "{0:c}")]

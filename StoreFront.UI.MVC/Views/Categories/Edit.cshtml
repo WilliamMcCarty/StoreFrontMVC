@@ -28,7 +28,7 @@
                                     @Html.ValidationMessageFor(model => model.MainCategory, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                            <br/>
+                            <br />
                             <div class="form-group">
                                 @Html.LabelFor(model => model.ChildCategory, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
@@ -36,7 +36,7 @@
                                     @Html.ValidationMessageFor(model => model.ChildCategory, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                            <br/>
+                            <br />
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
                                     &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -50,14 +50,14 @@
                         </div>
                     }
 
-                        <div>
-                            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                            &nbsp; &nbsp; &nbsp;&nbsp;
-                            @Html.ActionLink("Back to List", "Index")
-                        </div>
+                    <div>
+                        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp;&nbsp;
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,4 +65,5 @@
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    
 }
