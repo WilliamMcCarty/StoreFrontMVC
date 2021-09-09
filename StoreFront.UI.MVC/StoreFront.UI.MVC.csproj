@@ -255,6 +255,10 @@
     <Content Include="Content\images\Collectibles\Statues\patriotic-eagle-statue-sculpture-63.jpg" />
     <Content Include="Content\images\Collectibles\Statues\peony-fairy-solar-statue-43.jpg" />
     <Content Include="Content\images\Collectibles\Statues\solar-bluebird-gnome-welcome-statue-47.jpg" />
+    <Content Include="Content\images\Collectibles\Vases\azure-blue-art-glass-vase-30.jpg" />
+    <Content Include="Content\images\Collectibles\Vases\emerald-art-glass-vase-29.jpg" />
+    <Content Include="Content\images\Collectibles\Vases\modern-duo-tone-glass-vase-29.jpg" />
+    <Content Include="Content\images\Collectibles\Vases\sunfire-glass-vase-40.jpg" />
     <Content Include="Content\images\contacts01.jpg" />
     <Content Include="Content\images\corner1.jpg" />
     <Content Include="Content\images\corner2.jpg" />
@@ -273,7 +277,15 @@
     <Content Include="Content\images\gallery10.jpg" />
     <Content Include="Content\images\gallery11.jpg" />
     <Content Include="Content\images\gallery12.jpg" />
+    <Content Include="Content\images\Garden\Fountains\doggy-wash-fountain-49.jpg" />
+    <Content Include="Content\images\Garden\Fountains\fairy-solar-water-fountain-38.jpg" />
+    <Content Include="Content\images\Garden\Fountains\teamwork-water-pump-solar-fountain-34.jpg" />
     <Content Include="Content\images\Garden\Fountains\wishing-well-water-fountain-34.jpg" />
+    <Content Include="Content\images\Garden\OutDoorLiving\8ft-weather-resistant-yard-garden-windmill.jpg" />
+    <Content Include="Content\images\Garden\OutDoorLiving\LadyBugSwingRed.jpg" />
+    <Content Include="Content\images\Garden\OutDoorLiving\outdoorcanopy.jpg" />
+    <Content Include="Content\images\Garden\OutDoorLiving\redporchchair.jpg" />
+    <Content Include="Content\images\Garden\PlantersAndStands\wagon-wheel-barrel-planter-display-30.jpg" />
     <Content Include="Content\images\Gifts\Candles\hot-apple-pie-scented-candle-3x4-7.jpg" />
     <Content Include="Content\images\Gifts\Flowers\beautiful-red-flowers-candle-holder-13.jpg" />
     <Content Include="Content\images\Gifts\Flowers\lov-lav-med.jpg" />
@@ -570,6 +582,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\images\Garden\SteppingStones\" />
+    <Folder Include="Content\images\Gifts\FaithInspiration\" />
+    <Folder Include="Content\images\Gifts\Fragrances\" />
+    <Folder Include="Content\images\HomeDecor\Bathroom\" />
+    <Folder Include="Content\images\HomeDecor\Kitchen\" />
+    <Folder Include="Content\images\HomeDecor\Lamps\" />
+    <Folder Include="Content\images\HomeDecor\WallDecor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

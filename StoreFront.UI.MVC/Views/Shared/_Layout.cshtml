@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Floral Gifts & Collectibles";
 }
 
@@ -83,7 +84,7 @@
                     <div class="span12">
                         <div class="top1_inner">
 
-                            <header><div class="logo_wrapper"><a href="@Url.Action("Index","Home")" class="logo"><img src="~/Content/images/logo.png" alt=""></a></div></header>
+                            <header><div class="logo_wrapper"><a href="@Url.Action("Index", "Home")" class="logo"><img src="~/Content/images/logo.png" alt=""></a></div></header>
 
                             <div class="search-form-wrapper clearfix">
                                 <form id="search-form" action="~/Content/search.php" method="GET" accept-charset="utf-8" class="navbar-form">
@@ -113,8 +114,8 @@
                                                     <li>@Html.ActionLink("HOME", "Index", "Home")</li>
                                                 }
 
-                                                @if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/Products" ||
-                                                    HttpContext.Current.Request.Url.AbsolutePath == "/Home/ProductsByCategory")
+                                                @if (HttpContext.Current.Request.Url.AbsolutePath.Contains("/Home/Products") ||
+    HttpContext.Current.Request.Url.AbsolutePath == "/Home/ProductsByCategory")
                                                 {
                                                     <li class="sub-menu sub-menu-1 active">
                                                         <a href="@Url.Action("Products", "Home")">PRODUCTS</a>
@@ -373,142 +374,141 @@
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/Contact")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Contact</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Contact</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Account/Register")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Register</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Register</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Account/Login")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Login</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Login</div>
                                 </div>
                             }
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Account/ForgotPassword")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Forgot Password</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Forgot Password</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/UsersAdmin")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Users Admin</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Users Admin</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/RolesAdmin")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Roles Admin</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Roles Admin</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Categories")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Categories</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Categories</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Colors")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Colors</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Colors</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Departments")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Departments</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Departments</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Employees")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Employees</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Employees</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Images")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Images</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Images</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Products")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Products</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Products</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/ProductStatus")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Product Status</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Product Status</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Sizes")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Sizes</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Sizes</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Suppliers")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Suppliers</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Edit Suppliers</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/About")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;About Us</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;About Us</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/Services")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Services</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Services</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath == "/Home/Products")
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Products</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Products</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath.Contains("/Home/ProductsByCategory"))
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Products By Category</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Products By Category</div>
                                 </div>
                             }
 
                             @if (HttpContext.Current.Request.Url.AbsolutePath.Contains("/Home/ProductsByMainCategory"))
                             {
                                 <div class="breadcrumbs1">
-                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index","Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Products By Main Category</div>
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Products By Main Category</div>
                                 </div>
                             }
-
                         </div>
                     </div>
                 </div>
