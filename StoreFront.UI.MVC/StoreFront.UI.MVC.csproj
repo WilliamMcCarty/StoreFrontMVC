@@ -285,7 +285,14 @@
     <Content Include="Content\images\Garden\OutDoorLiving\LadyBugSwingRed.jpg" />
     <Content Include="Content\images\Garden\OutDoorLiving\outdoorcanopy.jpg" />
     <Content Include="Content\images\Garden\OutDoorLiving\redporchchair.jpg" />
+    <Content Include="Content\images\Garden\PlantersAndStands\barrel-tricycle-planter-43.jpg" />
     <Content Include="Content\images\Garden\PlantersAndStands\wagon-wheel-barrel-planter-display-30.jpg" />
+    <Content Include="Content\images\Garden\PlantersAndStands\welcome-birdhouse-rustic-barrel-planter-46.jpg" />
+    <Content Include="Content\images\Garden\PlantersAndStands\zigzag-pallet-plant-stand-30.jpg" />
+    <Content Include="Content\images\Garden\SteppingStones\butterfly-stepping-stone-73.jpg" />
+    <Content Include="Content\images\Garden\SteppingStones\butterfly-stepping-stone-82.jpg" />
+    <Content Include="Content\images\Garden\SteppingStones\celestial-glow-dark-step-stone-41.jpg" />
+    <Content Include="Content\images\Garden\SteppingStones\turtle-stepping-stone-36.jpg" />
     <Content Include="Content\images\Gifts\Candles\hot-apple-pie-scented-candle-3x4-7.jpg" />
     <Content Include="Content\images\Gifts\Flowers\beautiful-red-flowers-candle-holder-13.jpg" />
     <Content Include="Content\images\Gifts\Flowers\lov-lav-med.jpg" />
@@ -582,7 +589,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\images\Garden\SteppingStones\" />
     <Folder Include="Content\images\Gifts\FaithInspiration\" />
     <Folder Include="Content\images\Gifts\Fragrances\" />
     <Folder Include="Content\images\HomeDecor\Bathroom\" />
