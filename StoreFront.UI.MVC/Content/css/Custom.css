@@ -42,3 +42,16 @@
     height: 23px;
     width: 275px;
 }
+
+.detailTitleFontSize
+{
+    font-size: 18px;
+}
+
+.detailDescriptionFontSize {
+    font-size: 16px;
+}
+
+.detailPriceFontSize {
+    font-size: 18px;
+}

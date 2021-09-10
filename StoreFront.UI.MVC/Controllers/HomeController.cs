@@ -26,7 +26,7 @@ namespace IdentitySample.Controllers
             }
 
             var products2 = products.OrderBy(x => Guid.NewGuid()).Take(3);
-                        
+
             //return View(products);            
             return View(products2);
         }
@@ -204,6 +204,27 @@ namespace IdentitySample.Controllers
             }
 
             //return View(products);
+            return View(products);
+        }
+
+        [HttpGet]
+        public ActionResult ProductDetail(int? id)
+        {
+            if (id == null)
+            {
+                return View();
+            }
+
+            var products = (from p in db.Products
+                            where p.ProductID == id
+                            orderby p.Title
+                            select p).ToList();
+
+            if (products == null)
+            {
+                return View();
+            }
+
             return View(products);
         }
     }

@@ -294,6 +294,9 @@
     <Content Include="Content\images\Garden\SteppingStones\celestial-glow-dark-step-stone-41.jpg" />
     <Content Include="Content\images\Garden\SteppingStones\turtle-stepping-stone-36.jpg" />
     <Content Include="Content\images\Gifts\Candles\hot-apple-pie-scented-candle-3x4-7.jpg" />
+    <Content Include="Content\images\Gifts\Candles\lavender-collins-highball-scented-candle-11.jpg" />
+    <Content Include="Content\images\Gifts\Candles\passion-scent-tincture-bottle-candle-11.jpg" />
+    <Content Include="Content\images\Gifts\Candles\relaxation-scent-tincture-bottle-candle-11.jpg" />
     <Content Include="Content\images\Gifts\Flowers\beautiful-red-flowers-candle-holder-13.jpg" />
     <Content Include="Content\images\Gifts\Flowers\lov-lav-med.jpg" />
     <Content Include="Content\images\line1_px.png" />
@@ -586,6 +589,7 @@
     <Content Include="Views\Home\Products.cshtml" />
     <Content Include="Views\Home\ProductsByCategory.cshtml" />
     <Content Include="Views\Home\ProductsByMainCategory.cshtml" />
+    <Content Include="Views\Home\ProductDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

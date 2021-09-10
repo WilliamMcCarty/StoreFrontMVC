@@ -41,7 +41,7 @@
         });
 
         // touchTouch
-        $('.thumb-isotope .thumbnail a').touchTouch();
+        //$('.thumb-isotope .thumbnail a').touchTouch();
 
     }); //
 </script>
@@ -86,7 +86,7 @@
 
                                             <div class="thumb-isotope">
                                                 <div class="thumbnail clearfix">
-                                                    <a href="#">
+                                                    <a href="@Url.Action("ProductDetail", "Home", new { id = item.ProductID })">
                                                         <figure>
                                                             <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 270px; width: 270px;" class="borderCurve boxShadow" /><em></em>
                                                         </figure>
