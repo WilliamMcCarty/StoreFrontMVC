@@ -115,7 +115,7 @@
                                                 }
 
                                                 @if (HttpContext.Current.Request.Url.AbsolutePath.Contains("/Home/Products") ||
-    HttpContext.Current.Request.Url.AbsolutePath == "/Home/ProductsByCategory")
+HttpContext.Current.Request.Url.AbsolutePath == "/Home/ProductsByCategory" || HttpContext.Current.Request.Url.AbsolutePath.Contains("/Home/ProductDetail"))
                                                 {
                                                     <li class="sub-menu sub-menu-1 active">
                                                         <a href="@Url.Action("Products", "Home")">PRODUCTS</a>
@@ -507,6 +507,13 @@
                             {
                                 <div class="breadcrumbs1">
                                     <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Products By Main Category</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath.Contains("/Home/ProductDetail"))
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Products", "Home")">Products</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Products Detail</div>
                                 </div>
                             }
                         </div>

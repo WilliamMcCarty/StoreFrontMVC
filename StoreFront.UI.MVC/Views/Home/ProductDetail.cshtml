@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<StoreFront.DATA.EF.Product>
 
 @{
-    ViewBag.Title = "Product Detail";
+    ViewBag.Title = "Product Details";
 }
 
 <center><h2>@ViewBag.Title</h2></center>
@@ -21,6 +21,10 @@
                     <h5 class="card-title detailTitleFontSize">@Html.DisplayFor(modelItem => item.Title)</h5>
                     <p class="card-text detailDescriptionFontSize">@Html.DisplayFor(modelItem => item.Description)</p>
                     <p class="card-text detailPriceFontSize"><small class="text-muted">@Html.DisplayFor(modelItem => item.Price)</small></p>
+                    <form>
+                        <input type="button" value="Back to Previous Page"
+                               onClick="javascript: history.go(-1)" class="button1">
+                    </form>
                 </div>
             </div>
         </div>
