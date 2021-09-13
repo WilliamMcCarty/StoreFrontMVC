@@ -25,7 +25,7 @@
                                 {
                                     <div class="span4 banner banner@{@count}">
                                         <div class="banner_inner">
-                                            <a href="#">
+                                            <a href="@Url.Action("ProductDetail", "Home", new { id = item.ProductID })">
                                                 <img src="@item.Image.Image1" alt="" style="height: 270px; width: 270px;" class="borderCurve boxShadow">
                                                 <div class="caption borderCurve boxShadow" style="height: 100px; width: 270px;">
                                                     <div class="txt1">Featured Product</div>

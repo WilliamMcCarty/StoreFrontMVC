@@ -10,42 +10,86 @@
 
 @foreach (var item in Model)
 {
-<center>
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 470px; width: 470px;" class="borderCurve boxShadow" />
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
+    <center>
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
                     <h5 class="card-title detailTitleFontSize">@Html.DisplayFor(modelItem => item.Title)</h5>
-                    <p class="card-text detailDescriptionFontSize">@Html.DisplayFor(modelItem => item.Description)</p>
-                    <p class="card-text detailPriceFontSize"><small class="text-muted">@Html.DisplayFor(modelItem => item.Price)</small></p>
-                    <form>
-                        <input type="button" value="Back to Previous Page"
-                               onClick="javascript: history.go(-1)" class="button1">
-                    </form>
+                    <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 470px; width: 470px;" class="borderCurve boxShadow" />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <br />
+                        <p class="card-text detailDescriptionFontSize">@Html.DisplayFor(modelItem => item.Description)</p>
+                        <p class="card-text detailPriceFontSize"><small class="text-muted">@Html.DisplayFor(modelItem => item.Price)</small></p>
+                        <form>
+                            <input type="button" value="Back to Previous Page"
+                                   onClick="javascript: history.go(-1)" class="button1">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</center>
+    </center>
 
+    
+        @*<div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span8">
+                    <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 470px; width: 470px;" class="borderCurve boxShadow" />
+                </div>
 
+                <div class="span7">
+                    <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 470px; width: 470px; float:left;" class="borderCurve boxShadow" />
+                    <h5 class="card-title detailTitleFontSize">@Html.DisplayFor(modelItem => item.Title)</h5>
+                    <p class="card-text detailDescriptionFontSize">@Html.DisplayFor(modelItem => item.Description)</p>
+                    <p class="card-text detailPriceFontSize">
+                        <small class="text-muted">@Html.DisplayFor(modelItem => item.Price)</small>
+                        <form>
+                            <input type="button" value="Back to Previous Page"
+                                   onClick="javascript: history.go(-1)" class="button1">
+                        </form>
+                </div>
 
-    @*<div class="card mb-3">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 470px; width: 470px;" class="borderCurve boxShadow" /><em></em>
+                <form>
+                    <input type="button" value="Back to Previous Page"
+                           onClick="javascript: history.go(-1)" class="button1">
+                </form>
+            </div>
+        </div>*@
+    
+    <br />
+    <br />
+    @*<center>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <center>
+                    <table>
+                        <tr>
+                            <td style="height: 470px; width: 470px; padding: 10px;">
+                                <div>
+                                    <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 470px; width: 470px;" class="borderCurve boxShadow" />
+                                </div>
+                            </td>
+                            <td style="height: 470px; width: 270px;">
+                                <div>
+                                    <h5 class="card-title detailTitleFontSize">@Html.DisplayFor(modelItem => item.Title)</h5>
+                                    <p class="card-text detailDescriptionFontSize">@Html.DisplayFor(modelItem => item.Description)</p>
+                                    <p class="card-text detailPriceFontSize"><small class="text-muted">@Html.DisplayFor(modelItem => item.Price)</small>
+                                </div>
+                                <form>
+                                    <input type="button" value="Back to Previous Page"
+                                           onClick="javascript: history.go(-1)" class="button1">
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
             </div>
         </div>
-    </div>
+    </center>
+    <br />
+    <br />*@
 
-    <div class="col-md-8">
-        <div class="card-body">
-            @Html.DisplayFor(modelItem => item.Price)
-            <br /><br />
-            @Html.DisplayFor(modelItem => item.Title)
-        </div>
-    </div>*@
+    
 }
