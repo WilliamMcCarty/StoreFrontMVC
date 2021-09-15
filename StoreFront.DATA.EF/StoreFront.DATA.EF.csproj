@@ -50,10 +50,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>StoreFrontModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>StoreFrontModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>StoreFrontModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>StoreFrontModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Category.cs">
       <DependentUpon>StoreFrontModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Color.cs">
+      <DependentUpon>StoreFrontModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>StoreFrontModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Department.cs">
@@ -92,6 +107,9 @@
       <DependentUpon>StoreFrontModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Supplier.cs">
+      <DependentUpon>StoreFrontModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>StoreFrontModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

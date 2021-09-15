@@ -31,7 +31,6 @@ namespace StoreFront.DATA.EF
         public Nullable<int> ImageID4 { get; set; }
         public Nullable<int> ImageID5 { get; set; }
         public int SupplierID { get; set; }
-        public string Image6 { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual Color Color { get; set; }
@@ -43,5 +42,6 @@ namespace StoreFront.DATA.EF
         public virtual Image Image5 { get; set; }
         public virtual ProductStatus ProductStatu { get; set; }
         public virtual Size Size { get; set; }
+        public virtual Supplier Supplier { get; set; }
     }
 }

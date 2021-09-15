@@ -53,6 +53,7 @@ namespace StoreFront.UI.MVC.Controllers
             ViewBag.ImageID1 = new SelectList(db.Images, "ImageID", "Image1");
             ViewBag.StatusID = new SelectList(db.ProductStatus1.OrderBy(s => s.Status), "StatusID", "Status");
             ViewBag.SizeVariantID = new SelectList(db.Sizes, "SizeVariantID", "Size1");
+            ViewBag.SupplierID = new SelectList(db.Suppliers.OrderBy(s => s.Supplier1), "SupplierID", "Supplier1");
             return View();
         }
 
@@ -132,6 +133,7 @@ namespace StoreFront.UI.MVC.Controllers
             ViewBag.ImageID1 = new SelectList(db.Images, "ImageID", "Image1", product.ImageID1);
             ViewBag.StatusID = new SelectList(db.ProductStatus1, "StatusID", "Status", product.StatusID);
             ViewBag.SizeVariantID = new SelectList(db.Sizes, "SizeVariantID", "Size1", product.SizeVariantID);
+            ViewBag.SupplierID = new SelectList(db.Suppliers.OrderBy(s => s.Supplier1), "SupplierID", "Supplier1", product.SupplierID);
             return View(product);
         }
 
@@ -157,6 +159,7 @@ namespace StoreFront.UI.MVC.Controllers
             ViewBag.ImageID1 = new SelectList(db.Images, "ImageID", "Image1", product.ImageID1);
             ViewBag.StatusID = new SelectList(db.ProductStatus1.OrderBy(s => s.Status), "StatusID", "Status", product.StatusID);
             ViewBag.SizeVariantID = new SelectList(db.Sizes, "SizeVariantID", "Size1", product.SizeVariantID);
+            ViewBag.SupplierID = new SelectList(db.Suppliers.OrderBy(s => s.Supplier1), "SupplierID", "Supplier1",product.SupplierID);
             return View(product);
         }
 
@@ -247,6 +250,7 @@ namespace StoreFront.UI.MVC.Controllers
             ViewBag.ImageID1 = new SelectList(db.Images, "ImageID", "Image1", product.ImageID1);
             ViewBag.StatusID = new SelectList(db.ProductStatus1, "StatusID", "Status", product.StatusID);
             ViewBag.SizeVariantID = new SelectList(db.Sizes, "SizeVariantID", "Size1", product.SizeVariantID);
+            ViewBag.SupplierID = new SelectList(db.Suppliers.OrderBy(s => s.Supplier1), "SupplierID", "Supplier1", product.SupplierID);
             return View(product);
         }
 

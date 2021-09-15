@@ -246,7 +246,9 @@ namespace StoreFront.DATA.EF//.MetaData
     #region Supplier
     public class SupplierMetadata
     {
+        [Display(Name = "Supplier")]
         public int SupplierID { get; set; }
+        [Display(Name = "Supplier")]
         public string Supplier1 { get; set; }
         public string Contact { get; set; }
         public string Email { get; set; }

@@ -12,25 +12,18 @@ namespace StoreFront.DATA.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class Supplier
+    public partial class AspNetRole
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Supplier()
+        public AspNetRole()
         {
-            this.Products = new HashSet<Product>();
+            this.AspNetUsers = new HashSet<AspNetUser>();
         }
     
-        public int SupplierID { get; set; }
-        public string Supplier1 { get; set; }
-        public string Contact { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
-        public string Zip { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<AspNetUser> AspNetUsers { get; set; }
     }
 }

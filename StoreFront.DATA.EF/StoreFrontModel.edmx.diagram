@@ -26,6 +26,16 @@
         <AssociationConnector Association="StoreFrontModel.FK_Products_Images5" ManuallyRouted="false" />
         <AssociationConnector Association="StoreFrontModel.FK_Products_ProductStatus" ManuallyRouted="false" />
         <AssociationConnector Association="StoreFrontModel.FK_Products_Sizes" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="StoreFrontModel.C__MigrationHistory" Width="1.5" PointX="10.375" PointY="0.75" />
+        <EntityTypeShape EntityType="StoreFrontModel.AspNetRole" Width="1.5" PointX="8.375" PointY="8.5" />
+        <EntityTypeShape EntityType="StoreFrontModel.AspNetUserClaim" Width="1.5" PointX="12.875" PointY="9.625" />
+        <EntityTypeShape EntityType="StoreFrontModel.AspNetUserLogin" Width="1.5" PointX="12.875" PointY="7" />
+        <EntityTypeShape EntityType="StoreFrontModel.AspNetUser" Width="1.5" PointX="10.625" PointY="7.375" />
+        <EntityTypeShape EntityType="StoreFrontModel.sysdiagram" Width="1.5" PointX="10.375" PointY="3.75" />
+        <AssociationConnector Association="StoreFrontModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="StoreFrontModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="StoreFrontModel.FK_Products_Suppliers" />
+        <AssociationConnector Association="StoreFrontModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

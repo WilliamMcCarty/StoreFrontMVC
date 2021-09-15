@@ -24,7 +24,7 @@
                             @Html.HiddenFor(model => model.ImageID)
 
                             <div class="form-group">
-                                @Html.LabelFor(model => model.SizeVariantID, "SizeVariantID", htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.LabelFor(model => model.Size, "Size", htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
                                     &nbsp;&nbsp;&nbsp;
                                     @Html.DropDownList("SizeVariantID", null, "Select A Size", htmlAttributes: new { @class = "form-control" })
@@ -33,7 +33,7 @@
                             </div>
                             <br />
                             <div class="form-group">
-                                @Html.LabelFor(model => model.ColorVariantID, "ColorVariantID", htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.LabelFor(model => model.Color, "Color", htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
                                     &nbsp;&nbsp;&nbsp;
                                     @Html.DropDownList("ColorVariantID", null, "Select A Color", htmlAttributes: new { @class = "form-control" })
@@ -42,7 +42,7 @@
                             </div>
                             <br />
                             <div class="form-group">
-                                @Html.LabelFor(model => model.CategoriesID, "CategoriesID", htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.LabelFor(model => model.CategoriesID, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
                                     &nbsp;&nbsp;&nbsp;
                                     @Html.DropDownList("CategoriesID", null, htmlAttributes: new { @class = "form-control adminControlsDrop" })
@@ -96,7 +96,7 @@
                             </div>
                             <br />
                             <div class="form-group">
-                                @Html.LabelFor(model => model.StatusID, "StatusID", htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.LabelFor(model => model.StatusID, "Status", htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
                                     &nbsp;&nbsp;&nbsp;
                                     @Html.DropDownList("StatusID", null, "Select A Status", htmlAttributes: new { @class = "form-control adminControlsDrop" })
@@ -105,7 +105,7 @@
                             </div>
                             <br />
                             <div class="form-group">
-                                @Html.LabelFor(model => model.ImageID, "ImageID", htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.LabelFor(model => model.ImageID, "Image", htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
                                     &nbsp;&nbsp;&nbsp;
                                     @*@Html.DropDownList("ImageID", null, htmlAttributes: new { @class = "form-control adminControlsDrop" })
@@ -155,10 +155,11 @@
                                 </div>*@
                             <br />
                             <div class="form-group">
-                                @Html.LabelFor(model => model.SupplierID, htmlAttributes: new { @class = "control-label col-md-2" })
+                                @Html.LabelFor(model => model.Supplier, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
                                     &nbsp;&nbsp;&nbsp;
-                                    @Html.EditorFor(model => model.SupplierID, new { htmlAttributes = new { @class = "form-control adminControlsTextBox" } })
+                                    @Html.DropDownList("SupplierID", null, htmlAttributes: new { @class = "form-control" })
+                                    @*@Html.EditorFor(model => model.SupplierID, new { htmlAttributes = new { @class = "form-control adminControlsTextBox" } })*@
                                     @Html.ValidationMessageFor(model => model.SupplierID, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -169,7 +170,7 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input type="submit" value="Save" class="btn btn-default" />
+                                    <input type="submit" value="Save" class="button1" />
                                 </div>
                             </div>
                         </div>
@@ -180,7 +181,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        @Html.ActionLink("Back to List", "Index")
+                        @Html.ActionLink("Back to List", "Index", null, new { @class = "button1 noUnderLine" })
                     </div>
                 </div>
             </div>
