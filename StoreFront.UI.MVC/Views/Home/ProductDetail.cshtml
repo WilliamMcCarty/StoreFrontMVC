@@ -10,30 +10,30 @@
 
 @foreach (var item in Model)
 {
-    <center>
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <h5 class="card-title detailTitleFontSize">@Html.DisplayFor(modelItem => item.Title)</h5>
-                    <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 470px; width: 470px;" class="borderCurve boxShadow" />
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <br />
-                        <p class="card-text detailDescriptionFontSize">@Html.DisplayFor(modelItem => item.Description)</p>
-                        <p class="card-text detailPriceFontSize"><small class="text-muted">@Html.DisplayFor(modelItem => item.Price)</small></p>
-                        <form>
-                            <input type="button" value="Back to Previous Page"
-                                   onClick="javascript: history.go(-1)" class="button1">
-                        </form>
+    @*<center>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <h5 class="card-title detailTitleFontSize">@Html.DisplayFor(modelItem => item.Title)</h5>
+                        <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 470px; width: 470px;" class="borderCurve boxShadow" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <br />
+                            <p class="card-text detailDescriptionFontSize">@Html.DisplayFor(modelItem => item.Description)</p>
+                            <p class="card-text detailPriceFontSize"><small class="text-muted">@Html.DisplayFor(modelItem => item.Price)</small></p>
+                            <form>
+                                <input type="button" value="Back to Previous Page"
+                                       onClick="javascript: history.go(-1)" class="button1">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </center>
+        </center>*@
 
-    
-        @*<div class="container-fluid">
+
+    @*<div class="container-fluid">
             <div class="row-fluid">
                 <div class="span8">
                     <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 470px; width: 470px;" class="borderCurve boxShadow" />
@@ -57,39 +57,55 @@
                 </form>
             </div>
         </div>*@
-    
-    <br />
-    <br />
-    @*<center>
+
+    @*<br />
+        <br />*@
+    <center>
         <div class="container-fluid">
             <div class="row-fluid">
                 <center>
                     <table>
-                        <tr>
-                            <td style="height: 470px; width: 470px; padding: 10px;">
-                                <div>
-                                    <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 470px; width: 470px;" class="borderCurve boxShadow" />
-                                </div>
-                            </td>
-                            <td style="height: 470px; width: 270px;">
-                                <div>
-                                    <h5 class="card-title detailTitleFontSize">@Html.DisplayFor(modelItem => item.Title)</h5>
-                                    <p class="card-text detailDescriptionFontSize">@Html.DisplayFor(modelItem => item.Description)</p>
-                                    <p class="card-text detailPriceFontSize"><small class="text-muted">@Html.DisplayFor(modelItem => item.Price)</small>
-                                </div>
-                                <form>
-                                    <input type="button" value="Back to Previous Page"
-                                           onClick="javascript: history.go(-1)" class="button1">
-                                </form>
-                            </td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td style="max-height: 470px; max-width: 470px; padding: 10px;">
+                                    <div>
+                                        <img src="@item.Image.Image1" alt="@item.Title cover image" style="max-height: 470px; max-width: 470px;" class="borderCurve boxShadow" />
+                                    </div>
+                                </td>
+                                <td style="max-height: 470px; max-width: 570px;">
+                                    <div>
+                                        <br /><br />
+                                        <h5 class="card-title detailTitleFontSize">@Html.DisplayFor(modelItem => item.Title)</h5>
+                                        <p class="card-text detailDescriptionFontSize">@*@Html.DisplayFor(modelItem => item.Description)*@ @Html.Raw(item.Description)</p>
+
+                                        @if (item.ColorVariantID != null)
+                                        {
+                                            <p class="card-text detailDescriptionFontSize">Color: @item.Color.Color1</p>
+                                        }
+
+                                        @if (item.SizeVariantID != null)
+                                        {
+                                            <p class="card-text detailDescriptionFontSize">Size: @item.Size.Size1</p>
+                                        }
+
+                                        <p class="card-text detailPriceFontSize"><small class="text-muted">@Html.DisplayFor(modelItem => item.Price)</small>
+                                    </div>
+                                    <input type="button" value="Add to Cart"
+                                           onClick="#" class="button1" style="width:259px;">
+                                    <form>
+                                        <input type="button" value="Back to Previous Page"
+                                               onClick="javascript: history.go(-1)" class="button1">
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </center>
             </div>
         </div>
     </center>
     <br />
-    <br />*@
+    <br />
 
-    
+
 }

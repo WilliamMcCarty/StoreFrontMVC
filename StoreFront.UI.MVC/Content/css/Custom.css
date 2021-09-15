@@ -55,3 +55,16 @@
 .detailPriceFontSize {
     font-size: 18px;
 }
+
+.adminControlsTextBox {
+    width: 400px;
+}
+
+.adminControlsMultiTextBox {
+    width: 400px;
+    height: 150px;
+}
+
+.adminControlsDrop {
+    width: 414px;
+}

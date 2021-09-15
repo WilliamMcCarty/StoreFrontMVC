@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
 
 namespace StoreFront.DATA.EF//.MetaData
 {
@@ -171,7 +172,9 @@ namespace StoreFront.DATA.EF//.MetaData
         [UIHint("MultilineText")]
         public string Title { get; set; }
 
-        [UIHint("MultilineText")]
+        
+        [UIHint("tinymce_full")]
+        [Display(Name = "Description")]
         public string Description { get; set; }
         public string SKU { get; set; }
         [DisplayFormat(DataFormatString = "{0:c}")]
@@ -243,7 +246,15 @@ namespace StoreFront.DATA.EF//.MetaData
     #region Supplier
     public class SupplierMetadata
     {
-
+        public int SupplierID { get; set; }
+        public string Supplier1 { get; set; }
+        public string Contact { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zip { get; set; }
     }
 
     [MetadataType(typeof(SupplierMetadata))]

@@ -13,7 +13,7 @@ namespace StoreFront.DATA.EF
     using System.Collections.Generic;
     
     public partial class Supplier
-    {
+    {        
         public int SupplierID { get; set; }
         public string Supplier1 { get; set; }
         public string Contact { get; set; }
