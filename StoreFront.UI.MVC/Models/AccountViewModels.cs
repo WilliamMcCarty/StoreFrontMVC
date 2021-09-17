@@ -65,6 +65,18 @@ namespace IdentitySample.Models
     public class RegisterViewModel
     {
         [Required]
+        [StringLength(30, ErrorMessage = "* Cannot exceed 30 characters")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(30, ErrorMessage = "* Cannot exceed 30 characters")]
+        public string LastName { get; set; }
+
+        [Required]
+        [StringLength(7, ErrorMessage = "* Cannot exceed 7 characters")]
+        public string FavoriteColor { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

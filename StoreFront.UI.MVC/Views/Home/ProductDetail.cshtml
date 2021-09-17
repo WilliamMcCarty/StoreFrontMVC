@@ -90,8 +90,14 @@
 
                                         <p class="card-text detailPriceFontSize"><small class="text-muted">@Html.DisplayFor(modelItem => item.Price)</small>
                                     </div>
-                                    <input type="button" value="Add to Cart"
-                                           onClick="#" class="button1" style="width:259px;">
+                                    @using (Html.BeginForm("AddToCart", "ShoppingCart", new { productid = item.ProductID }, FormMethod.Post, new { @class = "" }))
+                                    {
+                                        @*<span class="label">Quantity: </span>*@
+                                        @Html.TextBox("Qty", 1, new { @class = "form-control", style = "max-width: 50px; display: none;" })
+                                        <input type="submit" value="Add To Cart" class="button1" style="width:259px;" />
+                                    }
+                                    @*<input type="button" value="Add to Cart"
+                                        onClick="#" class="button1" style="width:259px;">*@
                                     <form>
                                         <input type="button" value="Back to Previous Page"
                                                onClick="javascript: history.go(-1)" class="button1">
@@ -106,6 +112,6 @@
     </center>
     <br />
     <br />
-
-
+    
+        
 }

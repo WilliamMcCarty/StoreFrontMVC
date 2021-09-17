@@ -68,3 +68,10 @@
 .adminControlsDrop {
     width: 414px;
 }
+
+span.cart-text {
+    position: relative;
+    bottom: 10px;
+    left: 5px;
+    font-size: .6em;
+}

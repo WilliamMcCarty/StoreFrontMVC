@@ -1,6 +1,27 @@
-﻿
+﻿@using Microsoft.AspNet.Identity
+@using StoreFront.DATA.EF
 @{
     ViewBag.Title = "Floral Gifts & Collectibles";
+}
+@{
+    int location = User.Identity.GetUserName().IndexOf("@");
+
+    StoreFrontEntities db = new StoreFrontEntities();
+    string userId = User.Identity.GetUserId();
+
+    UserDetail currentUser = db.UserDetails.Find(userId);
+
+    string userFN = "Guest";
+
+    string favColor = "#cccccc";
+
+    if (currentUser != null)
+    {
+        userFN = currentUser.FirstName;
+        favColor = currentUser.FavoriteColor;
+        Session["User"] = "Welcome: " + userFN;
+    }
+
 }
 
 <!DOCTYPE html>
@@ -17,6 +38,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="~/Content/favicon-16x16.png">
     @*<link rel="manifest" href="/site.webmanifest">*@
 
+
+
     <link rel="stylesheet" href="~/Content/css/bootstrap.css" type="text/css" media="screen">
     <link rel="stylesheet" href="~/Content/css/bootstrap-responsive.css" type="text/css" media="screen">
     <link rel="stylesheet" href="~/Content/css/camera.css" type="text/css" media="screen">
@@ -24,7 +47,7 @@
     <link rel="stylesheet" href="~/Content/css/custom.css" type="text/css" media="screen">
     <link rel="stylesheet" href="~/Content/css/touchTouch.css" type="text/css" media="screen">
     <link rel="stylesheet" href="~/Content/css/isotope.css" type="text/css" media="screen">
-
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
     <!--jQuery DataTables-->
     <link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css" rel="stylesheet" />
@@ -90,7 +113,16 @@
                     <div class="span12">
                         <div class="top1_inner">
 
-                            <header><div class="logo_wrapper"><a href="@Url.Action("Index", "Home")" class="logo"><img src="~/Content/images/logo.png" alt=""></a></div></header>
+                            <header>
+                                <div class="logo_wrapper">
+                                    <a href="@Url.Action("Index", "Home")" class="logo"><img src="~/Content/images/logo.png" alt=""></a>
+                                    <br />
+                                    @if (Session["User"] != null)
+                                    {
+                                        <span style="font-size: 24px;">@Session["User"].ToString()</span>
+                                    }
+                                </div>
+                            </header>
 
                             <div class="search-form-wrapper clearfix">
                                 <form id="search-form" action="~/Content/search.php" method="GET" accept-charset="utf-8" class="navbar-form">
@@ -325,6 +357,48 @@ HttpContext.Current.Request.Url.AbsolutePath == "/Home/ProductsByCategory" || Ht
                                                         </li>
                                                     }
                                                 }
+
+                                                @if (HttpContext.Current.Request.Url.AbsolutePath.Contains("ShoppingCart"))
+                                                {
+                                                    <li class="nav-item active">
+                                                        @{
+                                                            Dictionary<int, StoreFront.UI.MVC.Models.CartItemViewModel> shoppingCart = (Dictionary<int, StoreFront.UI.MVC.Models.CartItemViewModel>)Session["cart"];
+
+                                                            int nbrItems = 0;
+
+                                                            if (Session["cart"] != null)
+                                                            {
+                                                                foreach (var item in shoppingCart)
+                                                                {
+                                                                    nbrItems += item.Value.Qty;
+                                                                }
+                                                            }
+                                                        }
+                                                        <a href="@Url.Action("Index", "ShoppingCart")"><i class="fa fa-shopping-basket"></i><span class="cart-text">@nbrItems</span></a>
+                                                    </li>
+                                                }
+                                                else
+                                                {
+                                                    <li class="nav-item">
+                                                        @{
+                                                            Dictionary<int, StoreFront.UI.MVC.Models.CartItemViewModel> shoppingCart = (Dictionary<int, StoreFront.UI.MVC.Models.CartItemViewModel>)Session["cart"];
+
+                                                            int nbrItems = 0;
+
+                                                            if (Session["cart"] != null)
+                                                            {
+                                                                foreach (var item in shoppingCart)
+                                                                {
+                                                                    nbrItems += item.Value.Qty;
+                                                                }
+                                                            }
+                                                        }
+                                                        <a href="@Url.Action("Index", "ShoppingCart")"><i class="fa fa-shopping-basket"></i><span class="cart-text">@nbrItems</span></a>
+                                                    </li>
+                                                }
+
+
+
                                             </ul>
                                         </div>
                                     </div>
@@ -520,6 +594,13 @@ HttpContext.Current.Request.Url.AbsolutePath == "/Home/ProductsByCategory" || Ht
                             {
                                 <div class="breadcrumbs1">
                                     <div class="breadcrumbs1_inner"><a href="@Url.Action("Products", "Home")">Products</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Products Detail</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath.Contains("ShoppingCart"))
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Products", "Home")">Products</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Shopping Cart</div>
                                 </div>
                             }
                         </div>

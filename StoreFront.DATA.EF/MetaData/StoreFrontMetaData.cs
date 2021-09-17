@@ -18,7 +18,7 @@ namespace StoreFront.DATA.EF//.MetaData
         [Display(Name = "Main Category")]
         public string MainCategory { get; set; }
 
-        [Required(ErrorMessage = "* Child Category is required")]
+        [Required(ErrorMessage = "*Child Category is required")]
         [StringLength(25, ErrorMessage = "* Cannot exceed 25 characters")]
         [Display(Name = "Child Category")]
         public string ChildCategory { get; set; }
@@ -36,8 +36,8 @@ namespace StoreFront.DATA.EF//.MetaData
     {
         public int ColorVariantID { get; set; }
 
-        [Required(ErrorMessage = "* Color is required")]
-        [StringLength(25, ErrorMessage = "* Cannot exceed 25 characters")]
+        [Required(ErrorMessage = "*Color is required")]
+        [StringLength(25, ErrorMessage = "*Cannot exceed 25 characters")]
         [Display(Name = "Color")]
         public string Color1 { get; set; }
     }
@@ -167,8 +167,11 @@ namespace StoreFront.DATA.EF//.MetaData
         public int ProductID { get; set; }
         public Nullable<int> SizeVariantID { get; set; }
         public Nullable<int> ColorVariantID { get; set; }
+
+        [Required(ErrorMessage = "*Category is required")]
         public int CategoriesID { get; set; }
 
+        [Required(ErrorMessage = "*Title is required")]
         [UIHint("MultilineText")]
         public string Title { get; set; }
 
@@ -176,21 +179,32 @@ namespace StoreFront.DATA.EF//.MetaData
         [UIHint("tinymce_full")]
         [Display(Name = "Description")]
         public string Description { get; set; }
+
+        [Required(ErrorMessage = "*SKU is required")]
         public string SKU { get; set; }
+
+        [Required(ErrorMessage = "*Price is required")]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public decimal Price { get; set; }
         public int Stock { get; set; }
         public Nullable<int> StatusID { get; set; }
+
+        [Required(ErrorMessage = "*Image is required")]
         public int ImageID { get; set; }
         public Nullable<int> ImageID1 { get; set; }
         public Nullable<int> ImageID2 { get; set; }
         public Nullable<int> ImageID3 { get; set; }
         public Nullable<int> ImageID4 { get; set; }
         public Nullable<int> ImageID5 { get; set; }
+
+        [Required(ErrorMessage = "*Supplier is required")]
         public int SupplierID { get; set; }
 
+        [Required(ErrorMessage = "*Category is required")]
         public virtual Category Category { get; set; }
         public virtual Color Color { get; set; }
+
+        [Required(ErrorMessage = "*Image is required")]
         public virtual Image Image { get; set; }
         public virtual Image Image1 { get; set; }
         public virtual Image Image2 { get; set; }
@@ -199,6 +213,9 @@ namespace StoreFront.DATA.EF//.MetaData
         public virtual Image Image5 { get; set; }
         public virtual ProductStatus ProductStatu { get; set; }
         public virtual Size Size { get; set; }
+
+        [Required(ErrorMessage = "*Supplier is required")]
+        public virtual Supplier Supplier { get; set; }
     }
 
     [MetadataType(typeof(ProductMetadata))]

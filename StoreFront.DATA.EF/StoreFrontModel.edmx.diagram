@@ -36,6 +36,8 @@
         <AssociationConnector Association="StoreFrontModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
         <AssociationConnector Association="StoreFrontModel.FK_Products_Suppliers" />
         <AssociationConnector Association="StoreFrontModel.AspNetUserRoles" />
+        <EntityTypeShape EntityType="StoreFrontModel.UserDetail" Width="1.5" PointX="12.875" PointY="12.375" />
+        <AssociationConnector Association="StoreFrontModel.FK_UserDetails_AspNetUsers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

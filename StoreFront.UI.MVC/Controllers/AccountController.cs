@@ -2,10 +2,12 @@
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using StoreFront.DATA.EF;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using StoreFront.UI.MVC.Models;
 
 namespace IdentitySample.Controllers
 {
@@ -74,7 +76,8 @@ namespace IdentitySample.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Index", "Home");
+                //return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -154,6 +157,17 @@ namespace IdentitySample.Controllers
                 if (result.Succeeded)
                 {
                     UserManager.AddToRole(user.Id, "Customer");
+
+                    StoreFrontEntities db = new StoreFrontEntities();
+                    UserDetail ud = new UserDetail();
+                    ud.UserId = user.Id;
+                    ud.FirstName = model.FirstName;
+                    ud.LastName = model.LastName;
+                    ud.FavoriteColor = model.FavoriteColor;
+
+                    db.UserDetails.Add(ud);
+                    db.SaveChanges();
+
                     return RedirectToAction("Login");
                 }
                 AddErrors(result);
@@ -389,6 +403,7 @@ namespace IdentitySample.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
+            Session.Remove("User");
             return RedirectToAction("Index", "Home");
         }
 
