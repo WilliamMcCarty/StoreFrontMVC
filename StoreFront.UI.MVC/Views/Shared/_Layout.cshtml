@@ -13,12 +13,9 @@
 
     string userFN = "Guest";
 
-    string favColor = "#cccccc";
-
     if (currentUser != null)
     {
         userFN = currentUser.FirstName;
-        favColor = currentUser.FavoriteColor;
         Session["User"] = "Welcome: " + userFN;
     }
 
