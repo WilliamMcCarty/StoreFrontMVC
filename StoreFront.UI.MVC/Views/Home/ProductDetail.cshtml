@@ -67,14 +67,13 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td style="max-height: 470px; max-width: 470px; padding: 10px;">
+                                <td valign="top" style="max-height: 470px; max-width: 470px; padding: 10px;">
                                     <div>
                                         <img src="@item.Image.Image1" alt="@item.Title cover image" style="max-height: 470px; max-width: 470px;" class="borderCurve boxShadow" />
                                     </div>
                                 </td>
-                                <td style="max-height: 470px; max-width: 570px;">
+                                <td valign="top" style="max-height: 470px; max-width: 470px;">
                                     <div>
-                                        <br /><br />
                                         <h5 class="card-title detailTitleFontSize">@Html.DisplayFor(modelItem => item.Title)</h5>
                                         <p class="card-text detailDescriptionFontSize">@*@Html.DisplayFor(modelItem => item.Description)*@ @Html.Raw(item.Description)</p>
 
@@ -88,13 +87,32 @@
                                             <p class="card-text detailDescriptionFontSize">Size: @item.Size.Size1</p>
                                         }
 
-                                        <p class="card-text detailPriceFontSize"><small class="text-muted">@Html.DisplayFor(modelItem => item.Price)</small>
+                                        @if (item.Stock == 0)
+                                        {
+                                            <p class="card-text detailDescriptionFontSize">Status: Out Of Stock</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="card-text detailDescriptionFontSize">Status: In Stock</p>
+                                        }
+
+                                        <p class="card-text detailDescriptionFontSize">Stock: @Html.DisplayFor(modelItem => item.Stock)</p>
+
+                                        <p class="card-text detailPriceFontSize"><small class="text-muted">Price: @Html.DisplayFor(modelItem => item.Price)</small>
                                     </div>
                                     @using (Html.BeginForm("AddToCart", "ShoppingCart", new { productid = item.ProductID }, FormMethod.Post, new { @class = "" }))
                                     {
                                         @*<span class="label">Quantity: </span>*@
                                         @Html.TextBox("Qty", 1, new { @class = "form-control", style = "max-width: 50px; display: none;" })
-                                        <input type="submit" value="Add To Cart" class="button1" style="width:259px;" />
+                                        if (item.Stock == 0)
+                                        {
+                                            <input type="submit" value="Add To Cart" class="button1" style="width:259px;" disabled="disabled" />
+                                        }
+                                        else
+                                        {
+                                            <input type="submit" value="Add To Cart" class="button1" style="width:259px;" />
+                                        }
+
                                     }
                                     @*<input type="button" value="Add to Cart"
                                         onClick="#" class="button1" style="width:259px;">*@
@@ -112,6 +130,6 @@
     </center>
     <br />
     <br />
-    
-        
+
+
 }

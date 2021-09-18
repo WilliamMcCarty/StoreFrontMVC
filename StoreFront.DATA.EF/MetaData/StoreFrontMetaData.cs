@@ -200,11 +200,11 @@ namespace StoreFront.DATA.EF//.MetaData
         [Required(ErrorMessage = "*Supplier is required")]
         public int SupplierID { get; set; }
 
-        [Required(ErrorMessage = "*Category is required")]
+        
         public virtual Category Category { get; set; }
         public virtual Color Color { get; set; }
 
-        [Required(ErrorMessage = "*Image is required")]
+        
         public virtual Image Image { get; set; }
         public virtual Image Image1 { get; set; }
         public virtual Image Image2 { get; set; }
@@ -214,7 +214,7 @@ namespace StoreFront.DATA.EF//.MetaData
         public virtual ProductStatus ProductStatu { get; set; }
         public virtual Size Size { get; set; }
 
-        [Required(ErrorMessage = "*Supplier is required")]
+        
         public virtual Supplier Supplier { get; set; }
     }
 
