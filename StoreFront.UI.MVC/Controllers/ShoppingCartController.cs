@@ -72,14 +72,24 @@ namespace StoreFront.UI.MVC.Controllers
         {
             Dictionary<int, CartItemViewModel> shoppingCart = (Dictionary<int, CartItemViewModel>)Session["cart"];
 
-            shoppingCart[productId].Qty = qty;
-
-            if (shoppingCart[productId].Qty == 0)
+            var products = db.Products.Where(p => p.ProductID == productId);
+            int productQty = 0;
+            foreach (var item in products)
             {
-                shoppingCart.Remove(productId);
+                productQty = item.Stock;
             }
 
-            Session["cart"] = shoppingCart;
+            if (qty <= productQty)
+            {
+                shoppingCart[productId].Qty = qty;
+
+                if (shoppingCart[productId].Qty == 0)
+                {
+                    shoppingCart.Remove(productId);
+                }
+
+                Session["cart"] = shoppingCart;
+            }            
 
             return RedirectToAction("Index");
         }
