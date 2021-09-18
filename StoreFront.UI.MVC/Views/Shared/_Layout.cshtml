@@ -122,8 +122,8 @@
                             </header>
 
                             <div class="search-form-wrapper clearfix">
-                                <form id="search-form" action="~/Content/search.php" method="GET" accept-charset="utf-8" class="navbar-form">
-                                    <input type="text" name="s" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''">
+                                <form id="search-form" action="~/Home/SearchResults" method="GET" accept-charset="utf-8" class="navbar-form">
+                                    <input type="text" name="searchFilter" value='Search' onBlur="if(this.value=='') this.value='Search'" onFocus="if(this.value =='Search' ) this.value=''" style="background-color: white; color: black;">
                                     <a href="#" onClick="document.getElementById('search-form').submit()"></a>
                                 </form>
                             </div>
@@ -598,6 +598,13 @@ HttpContext.Current.Request.Url.AbsolutePath == "/Home/ProductsByCategory" || Ht
                             {
                                 <div class="breadcrumbs1">
                                     <div class="breadcrumbs1_inner"><a href="@Url.Action("Products", "Home")">Products</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Shopping Cart</div>
+                                </div>
+                            }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath.Contains("SearchResults"))
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Search Results</div>
                                 </div>
                             }
                         </div>

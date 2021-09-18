@@ -227,5 +227,19 @@ namespace IdentitySample.Controllers
 
             return View(products);
         }
+
+        public ActionResult SearchResults(string searchFilter)
+        {
+            if (string.IsNullOrEmpty(searchFilter))
+            {
+                var products = db.Products.Where(a => a.ProductID == 0);
+                return View(products.ToList());
+            }
+            else
+            {
+                var searchResults = db.Products.Where(a => a.Title.Contains(searchFilter) || a.Description.Contains(searchFilter));
+                return View(searchResults.ToList());
+            }
+        }
     }
 }
