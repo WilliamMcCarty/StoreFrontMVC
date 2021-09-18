@@ -86,6 +86,7 @@
 
                                             <div class="thumb-isotope">
                                                 <div class="thumbnail clearfix">
+
                                                     <a href="@Url.Action("ProductDetail", "Home", new { id = item.ProductID })">
                                                         <figure>
                                                             <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 270px; width: 270px;" class="borderCurve boxShadow" /><em></em>
@@ -95,10 +96,14 @@
                                                             @Html.DisplayFor(modelItem => item.Price)
                                                             <br /><br />
                                                             @Html.DisplayFor(modelItem => item.Title)
+                                                            <br />
+
 
                                                         </div>
                                                     </a>
+
                                                 </div>
+
                                             </div>
 
                                         </li>
@@ -285,3 +290,4 @@
         </div>
     </div>
 </div>
+

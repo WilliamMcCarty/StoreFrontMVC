@@ -26,17 +26,20 @@
                                 @{int count = 1; }
                                 @foreach (var item in Model)
                                 {
-                                    <div class="span4 banner banner@{@count}">
-                                        <div class="banner_inner">
-                                            <a href="@Url.Action("ProductDetail", "Home", new { id = item.ProductID })">
-                                                <img src="@item.Image.Image1" alt="" style="height: 270px; width: 270px;" class="borderCurve boxShadow">
-                                                <div class="caption borderCurve boxShadow" style="height: 100px; width: 270px;">
-                                                    <div class="txt1">Featured Product</div>
-                                                    <div class="txt2">@Html.DisplayFor(modelItem => item.Title)</div>
-                                                </div>
-                                            </a>
-                                        </div>
+
+                                <div class="span4 banner banner@{@count}">
+                                    <div class="banner_inner">
+                                        <a href="@Url.Action("ProductDetail", "Home", new { id = item.ProductID })">
+                                            <img src="@item.Image.Image1" alt="" style="height: 270px; width: 270px;" class="borderCurve boxShadow">
+                                            <div class="caption borderCurve boxShadow" style="height: 100px; width: 270px;">
+                                                <div class="txt1">Featured Product</div>
+                                                <div class="txt2">@Html.DisplayFor(modelItem => item.Title)</div>
+                                            </div>
+                                        </a>
                                     </div>
+                                    
+                                </div>
+
                                     count++;
                                 }
 
@@ -77,7 +80,25 @@
                                     Our bouquets are craftly created with fresh flowers delivered daily, all flowers are shipped USPS over night.  We do partner with florist around the country and can also do same day delivery as well.  Our skilled florist's can do flower arrangements for any occasion, Weddings, Holidays, Birthday's, Funerals etc...
                                 </p>
 
-                                <a href="#" class="button1">read more</a>
+                                <!-- Button to trigger modal -->
+                                <a href="#myModalEboug" role="button" class="button1" data-toggle="modal">Read More</a>
+
+                                <!-- Modal -->
+                                <div id="myModalEboug" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-header" style="background-color: #725583;">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h3 id="myModalLabel" style="font-size: 25px;">Exclusive Bouquets</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p style="font-size: 18px;">
+                                            Our exclusive bouquets are hand crafted by our florist's.  Each bouquet is created with fresh flowers and customized to your needs.  If you need a unique bouquet for that special day, contact us and we will work with you to supply what you need.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="button3" data-dismiss="modal" aria-hidden="true">Close</button>
+                                        @*<button class="btn btn-primary">Save changes</button>*@
+                                    </div>
+                                </div>
 
 
 
