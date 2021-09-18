@@ -27,19 +27,19 @@
                     {
                         <table class="table">
                             <tr>
-                                <th>
+                                <th style="font-size: 15px;">
                                     Item
                                 </th>
-                                <th>
+                                <th style="font-size: 15px;">
                                     Quantity
                                 </th>
-                                <th>
+                                <th style="font-size: 15px;">
                                     Title
                                 </th>
-                                <th>
+                                <th style="font-size: 15px;">
                                     Price
                                 </th>
-                                <th>
+                                <th style="font-size: 15px;">
                                     Total
                                 </th>
                                 <th></th>
@@ -51,8 +51,8 @@
                                     <td>
                                         <a href="@Url.Action("ProductDetail", "Home", new { id = item.Value.Product.ProductID })">
                                             <img src="@item.Value.Product.Image.Image1" alt="@item.Value.Product.Title cover image" style="height: 125px; width: 125px;" class="borderCurve boxShadow" />
-                                            </a>
-                                            @*<img src="@item.Value.Product.Image.Image1" alt="Book Cover for @item.Value.Product.Title" title="@item.Value.Product.Title" />*@
+                                        </a>
+                                        @*<img src="@item.Value.Product.Image.Image1" alt="Book Cover for @item.Value.Product.Title" title="@item.Value.Product.Title" />*@
                                     </td>
                                     <td>
                                         @* v1 just showing the quantity *@
@@ -74,22 +74,26 @@
 
                                     </td>
                                     <td>
-                                        @item.Value.Product.Title
-                                        <br/>
+                                        <span style="font-size: 15px;">@item.Value.Product.Title</span>
+                                        <br />
                                         @if (item.Value.Product.Color != null)
                                         {
-                                            <span>Color:</span>
-                                            @item.Value.Product.Color.Color1;
+                                            <span style="font-size: 15px;">Color:</span>
+                                            <span style="font-size: 15px;">
+                                                @item.Value.Product.Color.Color1
+                                            </span>
                                         }
                                         <br />
                                         @if (item.Value.Product.Size != null)
                                         {
-                                            <span>Size:</span>
-                                            @item.Value.Product.Size.Size1;
+                                            <span style="font-size: 15px;">Size:</span>
+                                            <span style="font-size: 15px;">
+                                                @item.Value.Product.Size.Size1
+                                            </span>
                                         }
                                     </td>
                                     <td>
-                                        @string.Format($"{item.Value.Product.Price:c}")
+                                        <span style="font-size: 15px;">@string.Format($"{item.Value.Product.Price:c}")</span>
                                     </td>
                                     <td>
                                         @{
@@ -98,7 +102,7 @@
                                             cartTotal += lineTtoal;
                                         }
 
-                                        @string.Format($"{lineTtoal:c}")
+                                        <span style="font-size: 15px;">@string.Format($"{lineTtoal:c}")</span>
 
                                     </td>
                                     <td>
@@ -109,7 +113,7 @@
 
                         </table>
 
-                        <p class="alert alert-success text-center" style="background-color: #725583; color: white; font-size: 15px;">
+                        <p class="alert alert-success text-center" style="background-color: #725583; color: white; font-size: 15px; pull-right">
                             You have @totalCountOfITems item@(totalCountOfITems == 1 ? "" : "s") in your cart.
                             Your total before taxes and shipping is @string.Format($"{cartTotal:c}")
                         </p>
