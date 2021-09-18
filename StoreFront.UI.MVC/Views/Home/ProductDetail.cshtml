@@ -98,7 +98,15 @@
 
                                         <p class="card-text detailDescriptionFontSize">Stock: @Html.DisplayFor(modelItem => item.Stock)</p>
 
-                                        <p class="card-text detailPriceFontSize"><small class="text-muted">Price: @Html.DisplayFor(modelItem => item.Price)</small>
+                                        <p class="card-text detailPriceFontSize">
+                                            <small class="text-muted">
+                                                Price: @Html.DisplayFor(modelItem => item.Price)
+                                                @if (item.Stock == 1)
+                                                {
+                                                    <span> - Only 1 Left</span>
+                                                }
+                                                </small>
+                                        </p>
                                     </div>
                                     @using (Html.BeginForm("AddToCart", "ShoppingCart", new { productid = item.ProductID }, FormMethod.Post, new { @class = "" }))
                                     {
