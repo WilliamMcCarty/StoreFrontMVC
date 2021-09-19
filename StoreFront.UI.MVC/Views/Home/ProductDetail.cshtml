@@ -4,76 +4,65 @@
     ViewBag.Title = "Product Details";
 }
 
-<center><h2>@ViewBag.Title</h2></center>
+<script>
+    $(document).ready(function () {
+        //
+
+    }); //
+    $(window).load(function () {
+        // isotop
+        var $container = $('#isotope-items'),
+            $optionSet = $('#isotope-options'),
+            $optionSets = $('#isotope-filters'),
+            $optionLinks = $optionSets.find('a');
+        $container.isotope({
+            filter: '*',
+            layoutMode: 'fitRows'
+        });
+        $optionLinks.click(function () {
+            var $this = $(this);
+            // don't proceed if already selected
+            if ($this.hasClass('selected')) {
+                return false;
+            }
+            $optionSet.find('.selected').removeClass('selected');
+            $this.addClass('selected');
+
+            var selector = $(this).attr('data-filter');
+            $container.isotope({
+                filter: selector
+            });
+            return false;
+        });
+        $(window).on("resize", function (event) {
+            $container.isotope('reLayout');
+        });
+
+        // touchTouch
+        //$('.thumb-isotope .thumbnail a').touchTouch();
+
+    }); //
+</script>
+
 <br />
-<br />
+<center class="categoriesFontSize textShadow">@ViewBag.Title</center>
 
 @foreach (var item in Model)
 {
-    @*<center>
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <h5 class="card-title detailTitleFontSize">@Html.DisplayFor(modelItem => item.Title)</h5>
-                        <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 470px; width: 470px;" class="borderCurve boxShadow" />
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <br />
-                            <p class="card-text detailDescriptionFontSize">@Html.DisplayFor(modelItem => item.Description)</p>
-                            <p class="card-text detailPriceFontSize"><small class="text-muted">@Html.DisplayFor(modelItem => item.Price)</small></p>
-                            <form>
-                                <input type="button" value="Back to Previous Page"
-                                       onClick="javascript: history.go(-1)" class="button1">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </center>*@
-
-
-    @*<div class="container-fluid">
-            <div class="row-fluid">
-                <div class="span8">
-                    <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 470px; width: 470px;" class="borderCurve boxShadow" />
-                </div>
-
-                <div class="span7">
-                    <img src="@item.Image.Image1" alt="@item.Title cover image" style="height: 470px; width: 470px; float:left;" class="borderCurve boxShadow" />
-                    <h5 class="card-title detailTitleFontSize">@Html.DisplayFor(modelItem => item.Title)</h5>
-                    <p class="card-text detailDescriptionFontSize">@Html.DisplayFor(modelItem => item.Description)</p>
-                    <p class="card-text detailPriceFontSize">
-                        <small class="text-muted">@Html.DisplayFor(modelItem => item.Price)</small>
-                        <form>
-                            <input type="button" value="Back to Previous Page"
-                                   onClick="javascript: history.go(-1)" class="button1">
-                        </form>
-                </div>
-
-                <form>
-                    <input type="button" value="Back to Previous Page"
-                           onClick="javascript: history.go(-1)" class="button1">
-                </form>
-            </div>
-        </div>*@
-
-    @*<br />
-        <br />*@
-    <center>
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <center>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td valign="top" style="max-height: 470px; max-width: 470px; padding: 10px;">
-                                    <div>
-                                        <img src="@item.Image.Image1" alt="@item.Title cover image" style="max-height: 470px; max-width: 470px;" class="borderCurve boxShadow" />
-                                    </div>
-                                </td>
-                                <td valign="top" style="max-height: 470px; max-width: 470px;">
-                                    <div>
+    <div id="content">
+        <div class="container" id="isotope-items">
+            <div class="row">
+                <div class="span12">
+                    <div id="content_inner">
+                        <div class="row isotope-element isotope-filter1">
+                            <div class="span12 thumb-isotope">
+                                <div class="media thumbnail clearfix">
+                                    <a class="pull-left" href="#">
+                                        <figure>
+                                            <img src="@item.Image.Image1" alt="@item.Title cover image" style="max-height: 470px; max-width: 470px;" class="borderCurve" />
+                                        </figure>
+                                    </a>
+                                    <div class="media-body">
                                         <h5 class="card-title detailTitleFontSize">@Html.DisplayFor(modelItem => item.Title)</h5>
                                         <p class="card-text detailDescriptionFontSize">@*@Html.DisplayFor(modelItem => item.Description)*@ @Html.Raw(item.Description)</p>
 
@@ -107,37 +96,36 @@
                                                 }
                                             </small>
                                         </p>
-                                    </div>
-                                    @using (Html.BeginForm("AddToCart", "ShoppingCart", new { productid = item.ProductID }, FormMethod.Post, new { @class = "" }))
-                                    {
-                                        @*<span class="label">Quantity: </span>*@
-                                        @Html.TextBox("Qty", 1, new { @class = "form-control", style = "max-width: 50px; display: none;" })
-                                        if (item.Stock == 0)
-                                        {
-                                            <input type="submit" value="Add To Cart" class="button1" style="width:259px;" disabled="disabled" />
-                                        }
-                                        else
-                                        {
-                                            <input type="submit" value="Add To Cart" class="button1" style="width:259px;" />
-                                        }
 
-                                    }
-                                    @*<input type="button" value="Add to Cart"
-                                        onClick="#" class="button1" style="width:259px;">*@
-                                    <form>
-                                        <input type="button" value="Back to Previous Page"
-                                               onClick="javascript: history.go(-1)" class="button1">
-                                    </form>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </center>
+                                        @using (Html.BeginForm("AddToCart", "ShoppingCart", new { productid = item.ProductID }, FormMethod.Post, new { @class = "" }))
+                                        {
+                                            @*<span class="label">Quantity: </span>*@
+                                            @Html.TextBox("Qty", 1, new { @class = "form-control", style = "max-width: 50px; display: none;" })
+                                            if (item.Stock == 0)
+                                            {
+                                                <input type="submit" value="Add To Cart" class="button1" style="width:259px;" disabled="disabled" />
+                                            }
+                                            else
+                                            {
+                                                <input type="submit" value="Add To Cart" class="button1" style="width:259px;" />
+                                            }
+
+                                        }
+                                        @*<input type="button" value="Add to Cart"
+                                            onClick="#" class="button1" style="width:259px;">*@
+                                        <form>
+                                            <input type="button" value="Back to Previous Page"
+                                                   onClick="javascript: history.go(-1)" class="button1">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </center>
+    </div>
     <br />
     <br />
-
-    
 }
