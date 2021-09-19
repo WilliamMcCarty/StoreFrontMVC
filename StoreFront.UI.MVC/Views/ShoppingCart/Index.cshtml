@@ -54,17 +54,15 @@
                                         </a>
                                         @*<img src="@item.Value.Product.Image.Image1" alt="Book Cover for @item.Value.Product.Title" title="@item.Value.Product.Title" />*@
                                     </td>
-                                    <td>
-                                        @* v1 just showing the quantity *@
-                                        @*@item.Value.Qty*@
-
-                                        @* v2 showing the quantity in a textbox that allows us to update *@
-
+                                    <td valign="top">
                                         @using (Html.BeginForm("UpdateCart", "ShoppingCart", FormMethod.Post))
                                         {
                                             @Html.Hidden("productId", item.Key)
-                                            @Html.TextBox("qty", item.Value.Qty, new { @class = "form-control", style = "max-width: 50px; display: inline;" })
-                                            <input type="submit" value="Update Quantity" class="button1" />
+
+                                            @Html.TextBox("qty", item.Value.Qty, new { @class = "form-control form-control-sm border-0 shadow-0 p-0", style = "width: 35px;" })
+                                            <button type="submit" title="Update Quantity" class="button3" style="padding: 0; width: 35px; height: 40px;">
+                                                <i class="fa fa-refresh" style=""></i>
+                                            </button>
                                         }
 
                                         @{
