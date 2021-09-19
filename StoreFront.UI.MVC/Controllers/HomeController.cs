@@ -241,5 +241,10 @@ namespace IdentitySample.Controllers
                 return View(searchResults.ToList());
             }
         }
+
+        public ActionResult CheckOut()
+        {
+            return View();
+        }
     }
 }

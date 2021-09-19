@@ -607,6 +607,13 @@ HttpContext.Current.Request.Url.AbsolutePath == "/Home/ProductsByCategory" || Ht
                                     <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Search Results</div>
                                 </div>
                             }
+
+                            @if (HttpContext.Current.Request.Url.AbsolutePath.Contains("CheckOut"))
+                            {
+                                <div class="breadcrumbs1">
+                                    <div class="breadcrumbs1_inner"><a href="@Url.Action("Index", "Home")">Home</a>&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;Check Out</div>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
