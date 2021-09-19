@@ -21,28 +21,39 @@
                                 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-vertical", role = "form" }))
                                 {
                                     @Html.AntiForgeryToken()
+                                    <div class="row">
+                                        <div class="span3">
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputName">First Name:</label>
+                                                <div class="controls">
+                                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "First Name:" })
+                                                </div>
+                                                <div class="controls">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="span3">
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputEmail">Last Name:</label>
+                                                <div class="controls">
+                                                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Last Name:" })
+                                                </div>
+                                                <div class="controls">
 
-                                    <div class="form-group">
-                                        @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
-                                        <div class="col-md-10">
-                                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "First Name:" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="span3">
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputPhone">Favorite Color:</label>
+                                                <div class="controls">
+                                                    @Html.TextBoxFor(m => m.FavoriteColor, new { @class = "form-control", type = "color", style = "width:40px; height:40px" })
+                                                </div>
+                                                <div class="controls">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-
-                                    <div class="form-group">
-                                        @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
-                                        <div class="col-md-10">
-                                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Last Name:" })
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        @Html.LabelFor(m => m.FavoriteColor, new { @class = "col-md-2 control-label" })
-                                        <div class="col-md-10">
-                                            @Html.TextBoxFor(m => m.FavoriteColor, new { @class = "form-control", type = "color" })
-                                        </div>
-                                    </div>
-                                                                        
                                     <div class="row">
                                         <div class="span3">
                                             <div class="control-group">
@@ -84,7 +95,7 @@
                         </div>
                         <div class="span3">
 
-                            <h2>Usfull Info</h2>
+                            <h2>Usefull Info</h2>
 
                             <div class="thumb3">
                                 <div class="thumbnail clearfix">
@@ -96,7 +107,27 @@
                                             Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturientdiculus mus. Nulla dui.
                                         </p>
                                         <div class="line2"></div>
-                                        <div class="text-right"><a href="#" class="button2">read more</a></div>
+                                        <div class="text-right">
+                                            <!-- Button to trigger modal -->
+                                            <a href="#myModalContactRight" role="button" class="button3" data-toggle="modal">Read More</a>
+
+                                            <!-- Modal -->
+                                            <div id="myModalContactRight" class="modal hide fade text-center" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-header" style="background-color: #725583;">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h3 id="myModalLabel" style="font-size: 25px;">UseFull Info</h3>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p style="font-size: 18px;">
+                                                        Read More Information
+                                                    </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="button3" data-dismiss="modal" aria-hidden="true">Close</button>
+                                                    @*<button class="btn btn-primary">Save changes</button>*@
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
