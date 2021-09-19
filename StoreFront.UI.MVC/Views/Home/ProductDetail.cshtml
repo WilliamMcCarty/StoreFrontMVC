@@ -50,7 +50,7 @@
 @foreach (var item in Model)
 {
     <div id="content">
-        <div class="container" id="isotope-items">
+        <div class="container borderCurve boxShadow" id="isotope-items">
             <div class="row">
                 <div class="span12">
                     <div id="content_inner">
@@ -60,6 +60,7 @@
                                     <a class="pull-left" href="#">
                                         <figure>
                                             <img src="@item.Image.Image1" alt="@item.Title cover image" style="max-height: 470px; max-width: 470px;" class="borderCurve" />
+                                            <br />
                                         </figure>
                                     </a>
                                     <div class="media-body">
@@ -122,6 +123,72 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div class="container">
+            <!-- Button to trigger modal -->
+            <a href="#myModalContactRight" role="button" class="button1" data-toggle="modal">Product Details</a>
+
+            <!-- Modal -->
+            <div id="myModalContactRight" class="modal hide fade text-center" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header" style="background-color: #725583;">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 id="myModalLabel" style="font-size: 25px;">@Html.DisplayFor(modelItem => item.Title)</h3>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size: 18px; text-align:left;">
+                        @Html.Raw(item.Description)
+                    </p>
+                    @if (item.ColorVariantID != null)
+                    {
+                        <p style="font-size: 18px; text-align:left;">Color: @item.Color.Color1</p>
+                    }
+                    @if (item.SizeVariantID != null)
+                    {
+                        <p style="font-size: 18px; text-align:left;">Size: @item.Size.Size1</p>
+                    }
+
+                    @if (item.Stock == 0)
+                    {
+                        <p style="font-size: 18px; text-align:left;">Status: Out Of Stock</p>
+                    }
+                    else
+                    {
+                        <p style="font-size: 18px; text-align:left;">Status: In Stock</p>
+                    }
+
+                    <p style="font-size: 18px; text-align:left;">Stock: @Html.DisplayFor(modelItem => item.Stock)</p>
+
+                    <p style="font-size: 18px; text-align:left;">
+
+                        Price: @Html.DisplayFor(modelItem => item.Price)
+                        @if (item.Stock == 1)
+                        {
+                            <span> - Only 1 Left</span>
+                        }
+
+                    </p>
+                    @using (Html.BeginForm("AddToCart", "ShoppingCart", new { productid = item.ProductID }, FormMethod.Post, new { @class = "" }))
+                    {
+                        @*<span class="label">Quantity: </span>*@
+                        @Html.TextBox("Qty", 1, new { @class = "form-control", style = "max-width: 50px; display: none;" })
+                        if (item.Stock == 0)
+                        {
+                            <input type="submit" value="Add To Cart" class="button1" style="width:259px;" disabled="disabled" />
+                        }
+                        else
+                        {
+                            <input type="submit" value="Add To Cart" class="button1" style="width:259px;" />
+                        }
+
+                    }                    
+                </div>
+                <div class="modal-footer">
+                    <button class="button3" data-dismiss="modal" aria-hidden="true">Close</button>
                 </div>
             </div>
         </div>
