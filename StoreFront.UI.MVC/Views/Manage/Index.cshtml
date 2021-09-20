@@ -7,31 +7,31 @@
         <div class="row">
             <div class="span12">
                 <div id="content_inner">
-                    <h2>@ViewBag.Title.</h2>
+                    <h2>@ViewBag.Title</h2>
                     <p class="text-success">@ViewBag.StatusMessage</p>
                     <div class="row">
                         <div class="col-md-8">
                             <p>
-                                @(Model.HasPassword ? Html.ActionLink("Change your password", "ChangePassword")
-                                                            : Html.ActionLink("Pick a password", "SetPassword"))
+                                @(Model.HasPassword ? Html.ActionLink("Change your password", "ChangePassword", null, new { @class = "button3" })
+                                                            : Html.ActionLink("Pick a password", "SetPassword", null, new { @class = "button3" }))
                             </p>
                             <p>
-                                Phone Number: @(Model.PhoneNumber ?? "None") [
+                                Phone Number: @(Model.PhoneNumber ?? "None") 
                                 @if (Model.PhoneNumber != null)
                                 {
-                                    @Html.ActionLink("Change", "AddPhoneNumber")
+                                    @Html.ActionLink("Change", "AddPhoneNumber", null, new { @class = "button3" })
                                     @: &nbsp;|&nbsp;
-                                    @Html.ActionLink("Remove", "RemovePhoneNumber")
+                                    @Html.ActionLink("Remove", "RemovePhoneNumber", null, new { @class = "button3" })
                                 }
                                 else
                                 {
-                                    @Html.ActionLink("Add", "AddPhoneNumber")
+                                    @Html.ActionLink("Add", "AddPhoneNumber", null, new { @class = "button3" })
                                 }
-                                ]
+                                
                             </p>
                             <p>
                                 External Logins: @Model.Logins.Count
-                                @Html.ActionLink("[Manage]", "ManageLogins")
+                                @Html.ActionLink("Manage", "ManageLogins", null, new { @class = "button3" })
                             </p>
                             @if (Model.TwoFactor)
                             {
@@ -40,7 +40,7 @@
                                     @Html.AntiForgeryToken()
                                     <p>
                                         Two factor is currently enabled:
-                                        <input type="submit" value="Disable" class="btn btn-default" />
+                                        <input type="submit" value="Disable" class="button3" />
                                     </p>
                                 }
                             }
@@ -51,7 +51,7 @@
                                     @Html.AntiForgeryToken()
                                     <p>
                                         Two factor is currently disabled:
-                                        <input type="submit" value="Enable" class="btn btn-default" />
+                                        <input type="submit" value="Enable" class="button3" />
                                     </p>
                                 }
                             }
@@ -62,7 +62,7 @@
                                     @Html.AntiForgeryToken()
                                     <p>
                                         Browser is curently remembered for two factor:
-                                        <input type="submit" value="Forget Browser" class="btn btn-default" />
+                                        <input type="submit" value="Forget Browser" class="button3" />
                                     </p>
                                 }
                             }
@@ -73,7 +73,7 @@
                                     @Html.AntiForgeryToken()
                                     <p>
                                         Browser is curently not remembered for two factor:
-                                        <input type="submit" value="Remember Browser" class="btn btn-default" />
+                                        <input type="submit" value="Remember Browser" class="button3" />
                                     </p>
                                 }
                             }
