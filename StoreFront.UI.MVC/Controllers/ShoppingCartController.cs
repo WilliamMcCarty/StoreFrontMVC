@@ -45,7 +45,17 @@ namespace StoreFront.UI.MVC.Controllers
 
             if (shoppingCart.ContainsKey(product.ProductID))
             {
-                shoppingCart[product.ProductID].Qty += qty;
+                var products = db.Products.Where(p => p.ProductID == productId);
+                int productQty = 0;
+                foreach (var item2 in products)
+                {
+                    productQty = item2.Stock;
+                }
+
+                if ((shoppingCart[product.ProductID].Qty + qty) <= productQty)
+                {
+                    shoppingCart[product.ProductID].Qty += qty;
+                }
             }
             else
             {
