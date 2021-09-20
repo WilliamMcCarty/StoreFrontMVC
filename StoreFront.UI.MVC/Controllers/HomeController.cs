@@ -6,6 +6,8 @@ using StoreFront.UI.MVC;
 using StoreFront.DATA.EF;
 using System.Linq;
 using System;
+using System.Collections.Generic;
+using StoreFront.UI.MVC.Models;
 
 namespace IdentitySample.Controllers
 {
@@ -244,7 +246,15 @@ namespace IdentitySample.Controllers
 
         public ActionResult CheckOut()
         {
-            return View();
+            //retrive the Session shopping cart
+            var shoppingCart = (Dictionary<int, CartItemViewModel>)Session["cart"];
+
+            if (shoppingCart == null)
+            {
+                shoppingCart = new Dictionary<int, CartItemViewModel>();
+            }
+
+            return View(shoppingCart);
         }
     }
 }

@@ -1,6 +1,10 @@
-﻿
+﻿@model Dictionary<int, StoreFront.UI.MVC.Models.CartItemViewModel>
+
 @{
     ViewBag.Title = "Check Out";
+
+    decimal? cartTotal = 0;
+    int totalCountOfITems = 0;
 }
 
 <div id="content">
@@ -11,57 +15,146 @@
                     <div class="row">
                         <div class="span9">
                             <h2>@ViewBag.Title</h2>
-
-                            <div class="row">
-                                <div class="span3">
-                                    <div id="note"></div>
-                                    <div id="fields">
-                                        <form action="#">
-                                            <div class="row">
-                                                <div class="col-lg-6 form-group">
-                                                    <label class="text-small text-uppercase" for="firstName">First name</label>
+                            <div id="note"></div>
+                            <div id="fields">
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="span3">
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputName">First Name:</label>
+                                                <div class="controls">
                                                     <input class="form-control form-control-lg" id="firstName" type="text">
                                                 </div>
-                                                <div class="col-lg-6 form-group">
-                                                    <label class="text-small text-uppercase" for="lastName">Last name</label>
-                                                    <input class="form-control form-control-lg" id="lastName" type="text">
-                                                </div>
-                                                <div class="col-lg-6 form-group">
-                                                    <label class="text-small text-uppercase" for="email">Email address</label>
-                                                    <input class="form-control form-control-lg" id="email" type="email">
-                                                </div>
-                                                <div class="col-lg-6 form-group">
-                                                    <label class="text-small text-uppercase" for="phone">Phone number</label>
-                                                    <input class="form-control form-control-lg" id="phone" type="tel">
-                                                </div>
-
-
-                                                <div class="col-lg-12 form-group">
-                                                    <label class="text-small text-uppercase" for="address">Address line 1</label>
-                                                    <input class="form-control form-control-lg" id="address" type="text">
-                                                </div>
-                                                <div class="col-lg-12 form-group">
-                                                    <label class="text-small text-uppercase" for="address">Address line 2</label>
-                                                    <input class="form-control form-control-lg" id="addressalt" type="text">
-                                                </div>
-                                                <div class="col-lg-6 form-group">
-                                                    <label class="text-small text-uppercase" for="city">City</label>
-                                                    <input class="form-control form-control-lg" id="city" type="text">
-                                                </div>
-                                                <div class="col-lg-6 form-group">
-                                                    <label class="text-small text-uppercase" for="state">State</label>
-                                                    <input class="form-control form-control-lg" id="state" type="text">
-                                                </div>
-
-
-                                                <div class="col-lg-12 form-group">
-                                                    <button class="button1" type="submit">Place order</button>
+                                                <div class="controls">
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
+                                        <div class="span3">
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputName">Last Name:</label>
+                                                <div class="controls">
+                                                    <input class="form-control form-control-lg" id="lastName" type="text">
+                                                </div>
+                                                <div class="controls">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="span3">
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputName">Email:</label>
+                                                <div class="controls">
+                                                    <input class="form-control form-control-lg" id="email" type="email">
+                                                </div>
+                                                <div class="controls">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-
-
+                                    <div class="row">
+                                        <div class="span3">
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputName">Phone Number:</label>
+                                                <div class="controls">
+                                                    <input class="form-control form-control-lg" id="phone" type="tel">
+                                                </div>
+                                                <div class="controls">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="span3">
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputName">Address Line 1:</label>
+                                                <div class="controls">
+                                                    <input class="form-control form-control-lg" id="address1" type="text">
+                                                </div>
+                                                <div class="controls">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="span3">
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputName">Address Line 2:</label>
+                                                <div class="controls">
+                                                    <input class="form-control form-control-lg" id="address2" type="text">
+                                                </div>
+                                                <div class="controls">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="span3">
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputName">City:</label>
+                                                <div class="controls">
+                                                    <input class="form-control form-control-lg" id="city" type="text">
+                                                </div>
+                                                <div class="controls">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="span3">
+                                            <div class="control-group">
+                                                <label class="control-label" for="inputName">State:</label>
+                                                <div class="controls">
+                                                    <input class="form-control form-control-lg" id="state" type="text">
+                                                </div>
+                                                <div class="controls">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="submit" class="button1" value="Place Order" />
+                                </form>
+                            </div>
+                        </div>
+                        <div class="span3">
+                            <h2>Order:</h2>
+                            <div class="thumb3">
+                                <div class="thumbnail clearfix">
+                                    <div class="caption">
+                                        <div class="line2"></div>
+                                        @if (Model.Count() == 0)
+                                        {
+                                            <h3>There Are No Items In This Order</h3>
+                                        }
+                                        else
+                                        {
+                                            foreach (var item in Model)
+                                            {
+                                                decimal? lineTtoal = item.Value.Qty * item.Value.Product.Price;
+                                                cartTotal += lineTtoal;
+                                                totalCountOfITems += item.Value.Qty;
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width: 190px;"><h3>@item.Value.Product.Category.ChildCategory</h3></td>
+                                                            <td style="width: 80px; text-align: right;"><h3>@string.Format($"{lineTtoal:c}")</h3></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            }
+                                            <div class="line2"></div>
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="width: 190px;"><h3>Total:</h3></td>
+                                                        <td style="width: 80px; text-align: right;"><h3>@string.Format($"{cartTotal:c}")</h3></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="line2"></div>
+                                            <table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="width: 190px;"><h3>Total Number Of Items:</h3></td>
+                                                        <td style="width: 80px; text-align: right;"><h3>@string.Format($"{totalCountOfITems:n0}")</h3></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        }
+                                        <div class="line2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -71,3 +164,121 @@
         </div>
     </div>
 </div>
+
+
+@*<div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <div id="content_inner">
+                        <div class="row">
+                            <div class="span9">
+                                <h2>@ViewBag.Title</h2>
+                                <div id="note"></div>
+                                <div id="fields">
+                                    <div class="row">
+                                        <div class="span3">
+                                            <div id="note"></div>
+                                            <div id="fields">
+                                                <form action="#">
+                                                    <div class="row">
+                                                        <div class="span3">
+                                                            <div class="control-group">
+                                                                <label class="control-label" for="inputName">First Name:</label>
+                                                                <div class="controls">
+                                                                    <input class="form-control form-control-lg" id="firstName" type="text">
+                                                                </div>
+                                                                <div class="controls">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="span3">
+                                                            <div class="control-group">
+                                                                <label class="control-label" for="inputName">Last Name:</label>
+                                                                <div class="controls">
+                                                                    <input class="form-control form-control-lg" id="lastName" type="text">
+                                                                </div>
+                                                                <div class="controls">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="span3">
+                                                            <div class="control-group">
+                                                                <label class="control-label" for="inputName">Email:</label>
+                                                                <div class="controls">
+                                                                    <input class="form-control form-control-lg" id="email" type="email">
+                                                                </div>
+                                                                <div class="controls">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="span3">
+                                                            <div class="control-group">
+                                                                <label class="control-label" for="inputName">Phone Number:</label>
+                                                                <div class="controls">
+                                                                    <input class="form-control form-control-lg" id="phone" type="tel">
+                                                                </div>
+                                                                <div class="controls">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="span3">
+                                                            <div class="control-group">
+                                                                <label class="control-label" for="inputName">Address Line 1:</label>
+                                                                <div class="controls">
+                                                                    <input class="form-control form-control-lg" id="address1" type="text">
+                                                                </div>
+                                                                <div class="controls">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="span3">
+                                                            <div class="control-group">
+                                                                <label class="control-label" for="inputName">Address Line 2:</label>
+                                                                <div class="controls">
+                                                                    <input class="form-control form-control-lg" id="address2" type="text">
+                                                                </div>
+                                                                <div class="controls">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="span3">
+                                                            <div class="control-group">
+                                                                <label class="control-label" for="inputName">City:</label>
+                                                                <div class="controls">
+                                                                    <input class="form-control form-control-lg" id="city" type="text">
+                                                                </div>
+                                                                <div class="controls">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="span3">
+                                                            <div class="control-group">
+                                                                <label class="control-label" for="inputName">State:</label>
+                                                                <div class="controls">
+                                                                    <input class="form-control form-control-lg" id="state" type="text">
+                                                                </div>
+                                                                <div class="controls">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <button class="button1" type="submit">Place order</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
